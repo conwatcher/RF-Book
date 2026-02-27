@@ -7,31 +7,53 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>The Red Foundation Series by PJ Cereste</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="about.html">About</a>
-      <a href="community.html">Community</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a class="brand-link" href="index.html" aria-label="Red Foundations home">
+          <span class="brand-row">
+            <img class="brand-mark" src="images/publisher_logo.png" alt="Publisher logo" decoding="async" loading="eager" />
+            <span class="brand-title">Red Foundations</span>
+          </span>
+          <span class="brand-subtitle">Humanity reached for Mars. Mars was ready.</span>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="books.html" aria-current="page">Books</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="community.html">Community</a>
+        <a class="nav-link" href="newsletter.html">Newsletter</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn" href="books.html">Buy now</a>
+      </div>
+    </div>
   </header>
 
-  <section class="book">
-    <img src="images/redfoundations-cover.png" alt="Red Foundations Cover" />
-    <div>
-      <h2>Book One: Red Foundations</h2>
-      <p>When an impossible element becomes possible, humanity reaches for the stars—and discovers it may not be alone.</p>
-      <p>A mysterious scientist reveals <strong>Ceresium</strong>, defying physics and unlocking Mars colonization. But Jack Masters’ true agenda runs deeper than any government can imagine.</p>
-      <a class="btn" href="#">Buy Now</a>
-      <a class="btn secondary" href="#preview">Read Preview</a>
-    </div>
-  </section>
+  <main id="main">
+    <section class="book">
+      <img src="images/redfoundations-cover.png" alt="Red Foundations Cover" />
+      <div>
+        <h2>Book One: Red Foundations</h2>
+        <p>When an impossible element becomes possible, humanity reaches for the stars—and discovers it may not be alone.</p>
+        <p>A mysterious scientist reveals <strong>Ceresium</strong>, defying physics and unlocking Mars colonization. But Jack Masters' true agenda runs deeper than any government can imagine.</p>
+        <a class="btn" href="#">Buy Now</a>
+        <a class="btn secondary" href="#preview">Read Preview</a>
+      </div>
+    </section>
+  </main>
 
-  <footer>
-    <p>© 2026 PJ Cereste | Red Foundations Book One</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 PJ Cereste · Red Foundations Series</p>
+      <p class="muted">Built for readers of science fiction and big questions.</p>
+    </div>
   </footer>
 </body>
 </html>

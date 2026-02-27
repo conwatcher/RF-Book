@@ -1,55 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Red Foundations by PJ Cereste</title>
+  <meta name="description" content="Hard sci-fi on Mars—colony-building, political intrigue, and an ancient breadcrumb trail." />
+
   <link rel="stylesheet" href="css/style.css" />
+
   <meta property="og:title" content="Red Foundations by PJ Cereste" />
   <meta property="og:description" content="Hard sci-fi on Mars—colony-building, political intrigue, and an ancient breadcrumb trail." />
 </head>
 <body>
-  <header>
-    <h1>Red Foundations</h1>
-    <p class="subtitle">Humanity reached for Mars. Mars was ready.</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="about.html">About</a>
-      <a href="community.html">Community</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a class="brand-link" href="index.html" aria-label="Red Foundations home">
+          <span class="brand-title">Red Foundations</span>
+          <span class="brand-subtitle">Humanity reached for Mars. Mars was ready.</span>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="books.html">Books</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="community.html">Community</a>
+        <a class="nav-link" href="newsletter.html">Newsletter</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn" href="books.html">Buy now</a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <img src="images/mars-banner.jpg" alt="Mars Banner" />
-    <div class="hero-text">
-      <h2>Humanity reached for Mars. Mars was ready.</h2>
-      <a class="btn" href="books.html">Buy Red Foundations</a>
-      <a class="btn secondary" href="books.html#preview">Read a Free Preview</a>
+  <main id="main">
+    <section class="hero" aria-label="Hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Hard sci‑fi on Mars</p>
+          <h1 class="hero-title">Humanity reached for Mars. Mars was ready.</h1>
+          <p class="hero-lede">Colony-building, political intrigue, and an ancient breadcrumb trail—told with hard science and philosophical depth.</p>
+
+          <div class="hero-actions">
+            <a class="btn" href="books.html">Buy Red Foundations</a>
+            <a class="btn secondary" href="books.html#preview">Read a free preview</a>
+          </div>
+
+          <div class="hero-meta" role="list" aria-label="Highlights">
+            <div class="meta-pill" role="listitem">Series opener</div>
+            <div class="meta-pill" role="listitem">Hard science fiction</div>
+            <div class="meta-pill" role="listitem">Mystery &amp; politics</div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <figure class="hero-figure">
+            <img src="images/mars-banner.jpg" alt="Mars horizon, red dunes, and a distant settlement" loading="eager" decoding="async" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="about-title">About the book</h2>
+          <p class="section-subtitle">A grounded leap into the near future—where discovery changes everything.</p>
+        </div>
+
+        <div class="card">
+          <p>
+            When an impossible element becomes possible, humanity reaches for the stars—and discovers it might not be alone.
+            <em>Red Foundations</em> begins the <strong>Red Foundation Series</strong>, a fusion of hard science fiction and philosophical depth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="grid two">
+          <div>
+            <h2 id="newsletter-title">Join the Mission Log</h2>
+            <p class="muted">Be first to receive early chapters, design sketches, and launch news.</p>
+            <ul class="checklist">
+              <li>Early chapters &amp; sneak peeks</li>
+              <li>Worldbuilding notes</li>
+              <li>Release announcements</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <iframe
+              title="Newsletter signup"
+              src="https://YOURSUBSTACK.substack.com/embed"
+              width="100%"
+              height="320"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="community-title">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 id="community-title">Discuss the theories</h2>
+            <p class="muted">Trade predictions. Spot clues. Debate the ethics of colonizing Mars.</p>
+          </div>
+          <div>
+            <a class="btn" href="community.html">Enter the forum</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 PJ Cereste · Red Foundations Series</p>
+      <p class="muted">Built for readers of science fiction and big questions.</p>
     </div>
-  </section>
-
-  <section class="about">
-    <h2>About the Book</h2>
-    <p>When an impossible element becomes possible, humanity reaches for the stars—and discovers it might not be alone. <em>Red Foundations</em> begins the <strong>Red Foundation Series</strong>, a fusion of hard science fiction and philosophical depth.</p>
-  </section>
-
-  <section class="newsletter">
-    <h2>Join the Mission Log</h2>
-    <p>Be first to receive early chapters, design sketches, and launch news.</p>
-    <iframe src="https://YOURSUBSTACK.substack.com/embed" width="100%" height="320" frameborder="0" scrolling="no"></iframe>
-  </section>
-
-  <section class="community-cta">
-    <h2>Discuss the Theories</h2>
-    <p>Trade predictions. Spot clues. Debate the ethics of colonizing Mars.</p>
-    <a class="btn" href="community.html">Enter the Forum</a>
-  </section>
-
-  <footer>
-    <p>© 2026 PJ Cereste | Red Foundations Series</p>
   </footer>
 </body>
 </html>

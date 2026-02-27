@@ -2,20 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | PJ Cereste</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header><h1>Contact PJ Cereste</h1></header>
-  <section>
-    <form name="contact" method="post" data-netlify="true">
-      <label>Name:<br><input type="text" name="name" required></label><br>
-      <label>Email:<br><input type="email" name="email" required></label><br>
-      <label>Message:<br><textarea name="message" rows="6"></textarea></label><br>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-  <footer><p>© 2026 PJ Cereste</p></footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a class="brand-link" href="index.html" aria-label="Red Foundations home">
+          <span class="brand-row">
+            <img class="brand-mark" src="images/publisher_logo.png" alt="Publisher logo" decoding="async" loading="eager" />
+            <span class="brand-title">Red Foundations</span>
+          </span>
+          <span class="brand-subtitle">Humanity reached for Mars. Mars was ready.</span>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="books.html">Books</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="community.html">Community</a>
+        <a class="nav-link" href="newsletter.html">Newsletter</a>
+        <a class="nav-link" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn" href="books.html">Buy now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <h1>Contact PJ Cereste</h1>
+      <form name="contact" method="post" data-netlify="true">
+        <label>Name:<br><input type="text" name="name" required></label><br>
+        <label>Email:<br><input type="email" name="email" required></label><br>
+        <label>Message:<br><textarea name="message" rows="6"></textarea></label><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 PJ Cereste · Red Foundations Series</p>
+      <p class="muted">Built for readers of science fiction and big questions.</p>
+    </div>
+  </footer>
 </body>
 </html>

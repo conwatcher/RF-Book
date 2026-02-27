@@ -77,6 +77,21 @@ a{ color:inherit; }
 }
 
 .brand-link{ text-decoration:none; display:inline-grid; gap:.1rem; }
+.brand-row{
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.brand-mark{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 10px;
+  padding: 6px;
+  background: rgba(238,240,255,.08);
+  border: 1px solid rgba(238,240,255,.14);
+}
 .brand-title{
   font-weight: 750;
   letter-spacing: .01em;

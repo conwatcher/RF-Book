@@ -1,4 +1,11 @@
-# Site configuration
- title: RF Book
-description: Repository for managing Jekyll-based static site content
-theme: jekyll-theme-cayman
+title: Red Foundations
+description: "Humanity reached for Mars. Mars was ready."
+baseurl: ""
+url: "https://conwatcher.github.io"
+author: PJ Cereste
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

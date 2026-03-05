@@ -1,1 +1,23 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>RF Book Release</title>\n</head>\n<body>\n    <div id="countdown" style="text-align: center; margin: 20px; font-size: 24px;"></div>\n    <script>\n        function updateCountdown() {\n            const releaseDate = new Date('2026-06-01T00:00:00Z'); // Release date\n            const now = new Date(); // Current date\n            const timeRemaining = releaseDate - now; // Time remaining in milliseconds\n\n            const daysRemaining = Math.floor(timeRemaining / (1000 * 60 * 60 * 24)); // Convert ms to days\n\n            document.getElementById('countdown').innerHTML = `<strong>Days Until Release: ${daysRemaining}</strong>`;\n        }\n        updateCountdown(); // Initial call\n        setInterval(updateCountdown, 86400000); // Update every day\n    <\/script>\n    <div class="hero-section">\n        <h1>Welcome to RF Book</h1>\n    </div>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RF-Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Countdown Timer -->
+    <div id="countdown-timer">
+        <h2>Countdown Timer</h2>
+        <p id="timer">00:00:00</p>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="hero">
+        <h1>Welcome to RF-Book</h1>
+        <p>Your gateway to knowledge.</p>
+    </header>
+    <script src="countdown.js"></script>
+</body>
+</html>

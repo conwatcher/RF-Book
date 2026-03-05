@@ -7,6 +7,12 @@
     <meta name="description" content="{{ page.description | default: site.description | escape }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
     {% seo %}
+      <!-- MailerLite Universal -->
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '2162590');
+    </script>
+    <!-- End MailerLite Universal -->
   </head>
   <body class="{{ page.body_class | default: 'page' }}">
     {% include header.html %}
@@ -16,11 +22,5 @@
     {% include newsletter_block.html %}
     {% include footer.html %}
     <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
-    <!-- MailerLite Universal -->
-    <script>
-      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-      ml('account', '2162590');
-    </script>
-    <!-- End MailerLite Universal -->
   </body>
 </html>

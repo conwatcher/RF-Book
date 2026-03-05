@@ -9,9 +9,8 @@ description: Contact and newsletter signup for Red Foundations.
 
 <div class="banner">
   <p class="micro">
-    The best way to follow Red Foundations is through the newsletter.
+    The best way to follow Red Foundations is through the newsletter—sign up via the header or footer.
   </p>
-  <a class="button button--glow ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'uqzLKe', true)">Join the Newsletter</a>
 </div>
 
 <div class="hr"></div>

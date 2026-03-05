@@ -1,11 +1,21 @@
 title: Red Foundations
-description: "Humanity reached for Mars. Mars was ready."
+tagline: The First Civilization on Mars
+description: Tech-futuristic science fiction series by P.J. Cereste.
+author: P.J. Cereste
+url: "https://www.redfoundations.com"
 baseurl: ""
-url: "https://conwatcher.github.io"
-author: PJ Cereste
+timezone: America/New_York
 
-# Build settings
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
+# Replace this with your MailerLite landing page URL
+newsletter_url: "NEWSLETTER_LINK_HERE"
+
+# Optional: if you ever want a direct-download link (instead of email delivery)
+magnet_path: "/assets/downloads/mars-colony-handbook-red-foundations.pdf"
+
+markdown: kramdown
+permalink: pretty
+
+# GitHub Pages safe defaults
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag

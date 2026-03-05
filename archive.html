@@ -1,0 +1,23 @@
+---
+layout: default
+title: Colony Archives
+permalink: /archive/
+description: Updates, transmissions, and lore entries from the Red Foundations universe.
+---
+
+<h1>Colony Archives</h1>
+<p class="micro">Updates, transmissions, lore, and behind-the-scenes notes.</p>
+
+<ul class="list">
+  {% for post in site.posts %}
+    <li class="banner">
+      <a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a>
+      <div class="micro">{{ post.date | date: "%B %d, %Y" }}</div>
+      <div class="micro">{{ post.excerpt | strip_html | truncate: 220 }}</div>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="hr"></div>
+
+{% include newsletter_block.html %}

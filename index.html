@@ -1,0 +1,61 @@
+---
+layout: default
+title: Home
+description: Tech-futuristic sci-fi author site for Red Foundations by P.J. Cereste.
+body_class: home
+---
+
+<section class="hero">
+  <div>
+    <div class="kicker">Red Foundations • Science Fiction Series</div>
+    <h1>{{ site.tagline }}</h1>
+    <p>
+      <strong>Red Foundations</strong> is the first book in a planned series, set in a future where an alien impact triggers rapid terraforming on Mars.
+      The first decade of colonization becomes a test of survival, governance, and what “independence” really means.
+    </p>
+
+    <div class="hero__actions">
+      <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Book</a>
+      <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
+      <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Theme</div>
+        <h3>Independence vs. Dependency</h3>
+        <p class="micro">Colonists seek freedom from Earth—and from the subtle control embedded in “helpful” systems.</p>
+      </div>
+      <div class="card">
+        <div class="tag">World</div>
+        <h3>Amazonis Planitia</h3>
+        <p class="micro">A new settlement under a thinner sky, built around a space elevator and fragile infrastructure.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Technology</div>
+        <h3>Ceresium &amp; SENTINEL</h3>
+        <p class="micro">Luminescent metal cores, AI agriculture, tachyonic comms, and terraforming in motion.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="cover">
+    <img src="{{ '/assets/images/book-cover.jpg' | relative_url }}" alt="Red Foundations book cover">
+    <div class="caption">Cover art • Red Foundations</div>
+  </aside>
+</section>
+
+<section class="section">
+  <div class="banner">
+    <h2>Become a Mars Colonist</h2>
+    <p class="micro">
+      Subscribe to receive the <strong>Mars Colony Handbook</strong>—a free in-universe orientation guide for new arrivals.
+    </p>
+    <div class="hero__actions">
+      <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Subscribe &amp; Receive the Handbook</a>
+      <a class="button" href="{{ '/handbook/' | relative_url }}">Preview what’s inside</a>
+    </div>
+  </div>
+</section>

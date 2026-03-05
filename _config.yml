@@ -1,23 +1,4 @@
-title: Red Foundations
-tagline: The First Civilization on Mars
-description: "Tech-futuristic science fiction series by P.J. Cereste."
-author: P.J. Cereste
-url: "https://www.redfoundations.com"
+theme: minima
 baseurl: ""
-timezone: America/New_York
-
-newsletter_url: "https://preview.mailerlite.io/forms/2162590/181062276587980055/share"
-magnet_path: "/assets/downloads/mars-colony-handbook-red-foundations.pdf"
-
-markdown: kramdown
-permalink: pretty
-
-# GitHub Pages safe defaults
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
+url: "http://example.com"
+newsletter_url: "http://newsletter.example.com"

@@ -1,6 +1,13 @@
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 {{ site.author }} · Red Foundations Series</p>
-      <p class="muted">Built for readers of science fiction and big questions.</p>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <img src="{{ '/assets/images/rf-publishing-logo.png' | relative_url }}" alt="Red Foundations Publishing logo" class="footer__logo" />
+      <p class="micro">© {{ 'now' | date: '%Y' }} Red Foundations Publishing • P.J. Cereste</p>
     </div>
-  </footer>
+    <div class="footer__right">
+      <a href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Newsletter</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+    </div>
+  </div>
+</footer>

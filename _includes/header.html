@@ -1,28 +1,16 @@
-  <a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Red Foundations home">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">{{ site.title }}</span>
+    </a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <a class="brand-link" href="{{ site.baseurl }}/" aria-label="{{ site.title }} home">
-          <span class="brand-row">
-            <img class="brand-mark" src="{{ site.baseurl }}/assets/images/publisher_logo.png" alt="Publisher logo" decoding="async" loading="eager" />
-            <span class="brand-title">Red Foundations</span>
-          </span>
-          <span class="brand-subtitle">{{ site.description }}</span>
-        </a>
-      </div>
-
-      <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link" {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/">Home</a>
-        <a class="nav-link" {% if page.url contains "books" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/books.html">Books</a>
-        <a class="nav-link" {% if page.url contains "about" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/about.html">About</a>
-        <a class="nav-link" {% if page.url contains "community" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/community.html">Community</a>
-        <a class="nav-link" {% if page.url contains "newsletter" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/newsletter.html">Newsletter</a>
-        <a class="nav-link" {% if page.url contains "contact" %}aria-current="page"{% endif %} href="{{ site.baseurl }}/contact.html">Contact</a>
-      </nav>
-
-      <div class="header-cta">
-        <a class="btn" href="{{ site.baseurl }}/books.html">Buy now</a>
-      </div>
-    </div>
-  </header>
+    <nav class="nav" aria-label="Site">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/book/' | relative_url }}">The Book</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/archive/' | relative_url }}">Archive</a>
+      <a class="nav__cta" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
+    </nav>
+  </div>
+</header>

@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>RF Book</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-DyZvAKXQglGmG2qCscyiOJpPso1HmSbI9O1mTMRN7dbtIj9CYrGlLdMCtT/EwJwP" crossorigin="anonymous">
 </head>
 <body>
-
-<header>
-    <section class="hero">
-        <h1>{{ site.name }}</h1>
-        <p>Welcome to my blog!</p>
-    </section>
-</header>
-
-<main>
-    <section class="posts">
-        {% for post in site.posts %}
-        <article>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
-            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %d, %Y' }}</time>
-        </article>
-        {% endfor %}
-    </section>
-</main>
-
-<footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.name }}</p>
-</footer>
-
+    <header>
+        <div class="hero">
+            <h1>Welcome to the RF Book</h1>
+            <p>Your complete guide to RF technology</p>
+            <button>Start Learning</button>
+        </div>
+    </header>
+    <main>
+        <section id="features">
+            <h2>Features</h2>
+            <!-- Jekyll placeholders -->
+            {% for feature in site.data.features %}
+            <div class="feature">
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 RF Book. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

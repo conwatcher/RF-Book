@@ -209,7 +209,22 @@ p{margin:0 0 14px}
   border-radius: 16px;
   background: rgba(255,255,255,.02);
 }
+/* Newsletter inline “What is it?” expander */
+.newsletter__details {
+  margin: 0;
+}
 
+.newsletter__details-body {
+  margin-top: 12px;
+}
+
+.newsletter__seal {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 12px 0;
+}
 @media (max-width: 900px){
   .hero{grid-template-columns: 1fr; padding:22px}
   .card{grid-column: span 6}

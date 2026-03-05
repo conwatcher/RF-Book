@@ -1,4 +1,5 @@
 theme: minima
 baseurl: ""
-url: "http://example.com"
-newsletter_url: "http://newsletter.example.com"
+url: "https://www.redfoundationsbook.com"
+# Replace the value below with your actual newsletter signup URL (e.g. from Mailchimp, Substack, ConvertKit, etc.)
+newsletter_url: "https://newsletter.redfoundationsbook.com"

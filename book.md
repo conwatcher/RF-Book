@@ -37,7 +37,7 @@ description: Book profile for Red Foundations by P.J. Cereste.
     <p class="micro">
       Want an in-universe taste of the setting? Subscribe and receive the <strong>Mars Colony Handbook: Red Foundations</strong>.
     </p>
-    <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Subscribe &amp; Receive the Handbook</a>
+    <a class="button button--glow ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'uqzLKe', true)">Subscribe &amp; Receive the Handbook</a>
   </div>
 
   <div class="card" style="grid-column: span 5;">

@@ -11,7 +11,7 @@ description: Contact and newsletter signup for Red Foundations.
   <p class="micro">
     The best way to follow Red Foundations is through the newsletter.
   </p>
-  <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Join the Newsletter</a>
+  <a class="button button--glow ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'uqzLKe', true)">Join the Newsletter</a>
 </div>
 
 <div class="hr"></div>

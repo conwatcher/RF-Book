@@ -17,7 +17,7 @@ description: Reader magnet preview for the Mars Colony Handbook: Red Foundations
   </p>
 
   <div class="hero__actions">
-    <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Subscribe &amp; Receive the Handbook</a>
+    <a class="button button--glow ml-onclick-form" href="javascript:void(0)" onclick="ml('show', 'uqzLKe', true)">Subscribe &amp; Receive the Handbook</a>
     <a class="button button--ghost" href="{{ site.magnet_path }}">Direct PDF (optional)</a>
   </div>
 </div>

@@ -67,7 +67,18 @@ a{color:inherit}
   border-color: rgba(225,29,46,.35) !important;
   background: rgba(225,29,46,.10) !important;
 }
+/* Make "Buy Book" look distinct from the newsletter CTA */
+.nav__cta--buy{
+  border-color: rgba(255,59,59,.70) !important;
+  background: linear-gradient(180deg, rgba(255,59,59,.26), rgba(225,29,46,.14)) !important;
+  box-shadow: 0 10px 26px rgba(225,29,46,.22);
+}
 
+.nav__cta--buy:hover{
+  border-color: rgba(255,59,59,.95) !important;
+  background: linear-gradient(180deg, rgba(255,59,59,.34), rgba(225,29,46,.18)) !important;
+  transform: translateY(-1px);
+}
 .hero{
   display:grid;
   grid-template-columns: 1.15fr .85fr;

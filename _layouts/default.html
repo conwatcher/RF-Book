@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}</title>
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
-  <header>
-    <h1>{{ site.title }}</h1>
-  </header>
-  <main>
-  {{ content }}
-</main>
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Your Company. All rights reserved.</p>
-  </footer>
+<body class="{{ page.body_class }}">
+  {% include header.html %}
+
+  <main class="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
 </body>
 </html>

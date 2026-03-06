@@ -47,9 +47,6 @@ description: Book profile for Red Foundations by P.J. Cereste.
       <div class="caption">P.J. Cereste • Red Foundations</div>
     </div>
 
-    <div class="hr"></div>
-
-    <h3>Purchase Links</h3>
-    <p class="micro">Coming soon. Add links here when the book is live (Amazon, Barnes &amp; Noble, etc.).</p>
+    <div class="hr">
   </div>
 </div>

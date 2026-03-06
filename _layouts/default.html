@@ -11,8 +11,8 @@
     <h1>{{ site.title }}</h1>
   </header>
   <main>
-    {% yield %}
-  </main>
+  {{ content }}
+</main>
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Your Company. All rights reserved.</p>
   </footer>

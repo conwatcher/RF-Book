@@ -1,12 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfect Site</title>
-</head>
-<body>
-    <h1>Welcome to the Perfect Site</h1>
-    <p>This is a sample page.</p>
-</body>
-</html>
+---
+layout: default
+title: Home
+description: Tech-futuristic sci-fi author site for Red Foundations by P.J. Cereste.
+body_class: home
+---
+
+<section class="hero">
+  <div>
+    <div class="kicker">Red Foundations • Science Fiction Series</div>
+    <h1>{{ site.tagline }}</h1>
+    <p>
+      <strong>Red Foundations</strong> is the first book in a planned series, set in a future where an alien impact triggers rapid terraforming on Mars.
+      The first decade of colonization becomes a test of survival, governance, and what "independence" really means.
+    </p>
+
+    <div class="hero__actions">
+      <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Book</a>
+      <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
+      <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
+    </div>
+
+    <div class="hr"></div>
+
+    <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">
+      <p class="micro" style="margin:0">Days until <strong>Red Foundations</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">…</span></p>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="tag">Theme</div>
+        <h3>Independence vs. Dependency</h3>
+        <p class="micro">Colonists seek freedom from Earth—and from the subtle control embedded in "helpful" systems.</p>
+      </div>
+      <div class="card">
+        <div class="tag">World</div>
+        <h3>Amazonis Planitia</h3>
+        <p class="micro">A new settlement under a thinner sky, built around a space elevator and fragile infrastructure.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Technology</div>
+        <h3>Ceresium & SENTINEL</h3>
+        <p class="micro">Luminescent metal cores, AI agriculture, tachyonic comms, and terraforming in motion.</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="cover">
+    <img src="{{ '/assets/images/book-cover.jpg' | relative_url }}" alt="Red Foundations book cover">
+    <div class="caption">Cover art • Red Foundations</div>
+  </aside>
+</section>
+
+<section class="section">
+  <div class="banner">
+    <h2>Become a Mars Colonist</h2>
+    <p class="micro">
+      Subscribe to receive the <strong>Mars Colony Handbook</strong>—a free in-universe orientation guide for new arrivals.
+    </p>
+    <div class="hero__actions">
+      <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Subscribe & Receive the Handbook</a>
+      <a class="button" href="{{ '/handbook/' | relative_url }}">Preview what's inside</a>
+    </div>
+  </div>
+</section>

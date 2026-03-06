@@ -33,8 +33,11 @@ description: Book profile for Red Foundations by P.J. Cereste.
 
     <div class="hr"></div>
 
-    <h3>Purchase Links</h3>
-    <p class="micro">Coming soon. Add links here when the book is live (Amazon, Barnes &amp; Noble, etc.).</p>
+    <h3>Buy</h3>
+<p class="micro">Purchase <strong>Red Foundations</strong> securely via Stripe.</p>
+<p>
+  <a class="button button--glow" href="https://buy.stripe.com/8x28wP9i2cYU82C8SqaR200" target="_blank" rel="noopener">Buy Book</a>
+</p>
   </div>
 
   <div class="card" style="grid-column: span 5;">

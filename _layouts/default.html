@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Security headers (Sucuri recommendations) -->
+    <!-- Content-Security-Policy: restricts which origins can load scripts, styles, images,
+         and make network requests. 'unsafe-inline' is required for MailerLite's inline
+         loader script and the onclick handlers used to open its popup forms. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.mailerlite.com https://static.mailerlite.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.mailerlite.com; frame-src https://*.mailerlite.com; form-action 'self' https://*.mailerlite.com https://subscribepage.io; base-uri 'self'; object-src 'none';" />
+    <!-- Referrer-Policy: sends the full URL only for same-origin requests; for
+         cross-origin requests only the origin (no path) is sent, protecting user privacy. -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- End security headers -->
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />

@@ -3,43 +3,61 @@ layout: default
 title: Home
 description: Tech-futuristic sci-fi author site for Red Foundations by P.J. Cereste.
 body_class: home
+full_width: true
 ---
 
-<section class="hero">
-  <div>
-    <div class="kicker">Red Foundations • Science Fiction Series</div>
-    <h1>{{ site.tagline }}</h1>
-    <p>
-      <strong>Red Foundations</strong> is the first book in a planned series, set in a future where an alien impact triggers rapid terraforming on Mars.
-      The first decade of colonization becomes a test of survival, governance, and what "independence" really means.
-    </p>
+<section class="hero--full" style="--hero-bg: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mars%20City%20Control-J9vaPZpuRpeZ60SYiVxkZwdl8xf499.png');">
+  <style>.hero--full::before { background-image: var(--hero-bg); }</style>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="kicker">Red Foundations - Science Fiction Series</div>
+      <h1>{{ site.tagline }}</h1>
+      <p>
+        <strong>Red Foundations</strong> is the first book in a planned series, set in a future where an alien impact triggers rapid terraforming on Mars.
+        The first decade of colonization becomes a test of survival, governance, and what "independence" really means.
+      </p>
 
-    <div class="hero__actions">
-      <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Book</a>
-      <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
-      <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
+      <div class="hero__actions">
+        <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Book</a>
+        <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
+        <a class="button button--ghost" href="{{ '/world/' | relative_url }}">Explore the World</a>
+      </div>
+
+      <div class="hr"></div>
+
+      <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">
+        <p class="micro" style="margin:0">Days until <strong>Red Foundations</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">...</span></p>
+      </div>
     </div>
 
-    <div class="hr"></div>
+    <aside class="cover">
+      <img src="{{ '/assets/images/book-cover.jpg' | relative_url }}" alt="Red Foundations book cover">
+      <div class="caption">Cover art - Red Foundations</div>
+    </aside>
+  </div>
+</section>
 
-    <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">
-      <p class="micro" style="margin:0">Days until <strong>Red Foundations</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">…</span></p>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="grid">
-      <div class="card">
+<section class="section" style="max-width: var(--max); margin: 0 auto; padding: 40px 18px 60px;">
+  <div class="grid">
+    <div class="card card--image">
+      <img class="card__image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ceresium%20Power%20Core-9CA5c8fiIDmL3qEQIloRMsqpCLqdRo.png" alt="Ceresium Power Core" loading="lazy">
+      <div class="card__body">
         <div class="tag">Theme</div>
         <h3>Independence vs. Dependency</h3>
-        <p class="micro">Colonists seek freedom from Earth—and from the subtle control embedded in "helpful" systems.</p>
+        <p class="micro">Colonists seek freedom from Earth and from the subtle control embedded in "helpful" systems.</p>
       </div>
-      <div class="card">
+    </div>
+    <div class="card card--image">
+      <img class="card__image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Colony%20Settlement-BGBKgml1oAoojiYiY7qccSx87SopbP.png" alt="Colony Settlement" loading="lazy">
+      <div class="card__body">
         <div class="tag">World</div>
         <h3>Amazonis Planitia</h3>
         <p class="micro">A new settlement under a thinner sky, built around a space elevator and fragile infrastructure.</p>
       </div>
-      <div class="card">
+    </div>
+    <div class="card card--image">
+      <img class="card__image" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Tachyon%20Data%20Terminal-nQGrshbPkC81rnnGBoszy1nfGcLQFq.png" alt="Tachyon Data Terminal" loading="lazy">
+      <div class="card__body">
         <div class="tag">Technology</div>
         <h3>Ceresium & SENTINEL</h3>
         <p class="micro">Luminescent metal cores, AI agriculture, tachyonic comms, and terraforming in motion.</p>
@@ -47,21 +65,30 @@ body_class: home
     </div>
   </div>
 
-  <aside class="cover">
-    <img src="{{ '/assets/images/book-cover.jpg' | relative_url }}" alt="Red Foundations book cover">
-    <div class="caption">Cover art • Red Foundations</div>
-  </aside>
-</section>
+  <div class="hr"></div>
 
-<section class="section">
   <div class="banner">
     <h2>Become a Mars Colonist</h2>
     <p class="micro">
-      Subscribe to receive the <strong>Mars Colony Handbook</strong>—a free in-universe orientation guide for new arrivals.
+      Subscribe to receive the <strong>Mars Colony Handbook</strong> - a free in-universe orientation guide for new arrivals.
     </p>
     <div class="hero__actions">
       <a class="button button--glow" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Subscribe & Receive the Handbook</a>
       {% include handbook_preview_details.html %}
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div style="text-align: center;">
+    <h2>Explore the Red Foundations Universe</h2>
+    <p class="micro" style="max-width: 600px; margin: 0 auto 20px;">
+      Discover the locations, technology, and mysterious Ceresium that power humanity's first permanent Mars colony.
+    </p>
+    <div class="hero__actions" style="justify-content: center;">
+      <a class="button button--glow" href="{{ '/world/' | relative_url }}">The World</a>
+      <a class="button" href="{{ '/ceresium/' | relative_url }}">Ceresium</a>
+      <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
     </div>
   </div>
 </section>

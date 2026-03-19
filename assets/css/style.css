@@ -29,6 +29,7 @@ body{
 
 a{color:inherit}
 .main{max-width:var(--max); margin:0 auto; padding: 28px 18px 80px;}
+.main--full{max-width:none; padding:0;}
 .micro{color:var(--muted); font-size:.92rem}
 
 .header{
@@ -240,9 +241,343 @@ p{margin:0 0 14px}
   .hero{grid-template-columns: 1fr; padding:22px}
   .card{grid-column: span 6}
 }
+/* ==========================================================================
+   FULL-BLEED HERO
+   ========================================================================== */
+.hero--full {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 18px;
+  overflow: hidden;
+}
+.hero--full::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.hero--full::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7,10,15,.92) 0%, rgba(7,10,15,.75) 40%, rgba(7,10,15,.4) 100%);
+  z-index: -1;
+}
+.hero--full .hero__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero--full .hero__content {
+  position: relative;
+}
+.hero--full .cover {
+  justify-self: end;
+}
+
+/* Page hero (smaller, for interior pages) */
+.hero--page {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 18px 60px;
+  overflow: hidden;
+}
+.hero--page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.hero--page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,10,15,.5) 0%, rgba(7,10,15,.85) 70%, var(--bg) 100%);
+  z-index: -1;
+}
+.hero--page h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+.hero--page .lead {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   IMAGE GALLERY GRID
+   ========================================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.gallery--small {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.gallery__item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  border-color: rgba(255,255,255,.15);
+}
+.gallery__item:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+.gallery__image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+.gallery__caption {
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  background: rgba(0,0,0,.25);
+}
+.gallery__caption strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Section header for galleries */
+.gallery-section {
+  margin-top: 50px;
+}
+.gallery-section__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.gallery-section__title {
+  font-family: var(--mono);
+  font-size: 1rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0;
+}
+.gallery-section__line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox__content {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox__image {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+}
+.lightbox__info {
+  margin-top: 16px;
+  text-align: center;
+}
+.lightbox__title {
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+.lightbox__desc {
+  color: var(--muted);
+  font-size: .9rem;
+  margin: 0;
+  max-width: 500px;
+}
+.lightbox__close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.lightbox__close:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.25);
+}
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.lightbox__nav:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.25);
+}
+.lightbox__nav--prev {
+  left: -70px;
+}
+.lightbox__nav--next {
+  right: -70px;
+}
+.lightbox__counter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   FEATURE CARDS WITH IMAGES
+   ========================================================================== */
+.card--image {
+  padding: 0;
+  overflow: hidden;
+}
+.card--image .card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.card--image .card__body {
+  padding: 18px;
+}
+
+/* ==========================================================================
+   CONTENT SECTIONS (with optional bg images)
+   ========================================================================== */
+.section--image {
+  position: relative;
+  padding: 60px 0;
+  margin: 40px 0;
+}
+.section--image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  z-index: -1;
+}
+.section--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%);
+  z-index: -1;
+}
+
+/* Ceresium accent color */
+.ceresium-glow {
+  color: #6BB3FF;
+  text-shadow: 0 0 20px rgba(107,179,255,.4);
+}
+.border-ceresium {
+  border-color: rgba(107,179,255,.35);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .lightbox__nav--prev { left: 10px; }
+  .lightbox__nav--next { right: 10px; }
+}
+@media (max-width: 900px){
+  .hero{grid-template-columns: 1fr; padding:22px}
+  .hero--full .hero__inner { grid-template-columns: 1fr; text-align: center; }
+  .hero--full .cover { justify-self: center; max-width: 320px; }
+  .hero--full { min-height: 70vh; }
+  .hero--page h1 { font-size: 2.2rem; }
+  .card{grid-column: span 6}
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 640px){
   h1{font-size:2rem}
   .card{grid-column: span 12}
   .nav{gap:6px}
   .nav a{padding:8px}
+  .hero--full { min-height: auto; padding: 40px 18px; }
+  .hero--full::after { background: rgba(7,10,15,.88); }
+  .hero--page { min-height: 40vh; padding: 60px 18px 40px; }
+  .hero--page h1 { font-size: 1.8rem; }
+  .gallery { grid-template-columns: 1fr; }
+  .lightbox__nav { width: 40px; height: 40px; }
+  .lightbox__close { top: -45px; width: 38px; height: 38px; }
 }

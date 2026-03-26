@@ -1,0 +1,14 @@
+---
+layout: default
+title: Colonist Application — Wave 3
+body_class: page-newsletter
+---
+
+<div class="newsletter-hero">
+  <h1>MARS IS WAITING. ARE YOU READY?</h1>
+  <p>The primary colony is accepting applications for Wave 3 deployment. We don't need credentials. We need capability. Take the official entrance evaluation to discover your colonist profile — and find out if you have what it takes to survive the red dust.</p>
+</div>
+
+<div class="newsletter-form">
+  <div class="ml-embedded" data-form="b9029c"></div>
+</div>

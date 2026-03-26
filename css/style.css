@@ -26,10 +26,6 @@
   width: 100%;
   min-height: 350px;
 }
-```
-
-The key lines are the last two blocks — `display: block !important` and `min-height` on the `.ml-embedded` div force MailerLite's form to be visible and give it space to render into.
-
 Commit with the message:
 ```
 Add newsletter page CSS styles

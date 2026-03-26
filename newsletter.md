@@ -2,6 +2,7 @@
 layout: default
 title: Colonist Application — Wave 3
 body_class: page-newsletter
+permalink: /newsletter/
 ---
 
 <div class="newsletter-hero">

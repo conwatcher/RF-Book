@@ -5,6 +5,21 @@ description: Tech-futuristic sci-fi author site for Red Foundations by P.J. Cere
 body_class: home
 ---
 
+<!-- PRE-ORDER BANNER -->
+<div style="background: linear-gradient(90deg, #1a0000, #3a0000, #1a0000); border-top: 1px solid var(--red2); border-bottom: 1px solid var(--red2); text-align: center; padding: 0.85rem 1rem;">
+  <p style="margin: 0; font-size: 0.95rem; letter-spacing: 0.04em;">
+    <strong style="color: var(--red2);">RED FOUNDATIONS</strong>
+    <span style="color: #ccc;"> is available for pre-order — launching </span>
+    <strong style="color: #fff;">June 9, 2026</strong>
+  </p>
+  <a href="https://a.co/d/0bINYe4x"
+     target="_blank"
+     rel="noopener"
+     style="display: inline-block; margin-top: 0.55rem; padding: 0.45rem 1.4rem; background: var(--red2); color: #fff; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px;">
+    Pre-Order on Amazon
+  </a>
+</div>
+
 <section class="hero">
   <div>
     <div class="kicker">Red Foundations • Science Fiction Series</div>
@@ -65,3 +80,24 @@ body_class: home
     </div>
   </div>
 </section>
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+  (function() {
+    var launch = new Date('2026-06-09T00:00:00');
+    function update() {
+      var now = new Date();
+      var diff = launch - now;
+      var el = document.getElementById('countdown-days');
+      if (!el) return;
+      if (diff <= 0) {
+        el.textContent = 'OUT NOW';
+        return;
+      }
+      var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      el.textContent = days;
+    }
+    update();
+    setInterval(update, 60000);
+  })();
+</script>

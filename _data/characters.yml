@@ -33,3 +33,9 @@
     Marsh does not dismiss those concerns—he considers them a manageable cost of governance.
     What he is less willing to examine is whether the framework he upholds was ever designed with colonist welfare as its first priority.
   image: ""
+
+- name: "Test Character"
+  role: "Engineer"
+  teaser: "A pioneer on Mars."
+  bio: "Details about the Test Character's role in Red Foundations."
+  image: "assets/images/test_character.jpg"

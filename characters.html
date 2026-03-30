@@ -1,0 +1,86 @@
+---
+layout: default
+title: Profiles
+description: Meet the characters of Red Foundations — colonists, administrators, and the people shaping the future of Mars.
+---
+
+<section class="profiles-hero">
+  <div class="kicker">Red Foundations • Character Profiles</div>
+  <h1>The People of Amazonis</h1>
+  <p class="profiles-hero__sub">
+    Every colony is built by people. These are some of them—the engineers, administrators, and colonists whose choices shape whether humanity's first true foothold on Mars endures.
+  </p>
+</section>
+
+<section class="profiles-grid" aria-label="Character profiles">
+  {% for character in site.data.characters %}
+  <article class="profile-card" id="profile-{{ forloop.index }}">
+
+    <!-- Portrait -->
+    <div class="profile-card__portrait" aria-hidden="true">
+      {% if character.image and character.image != "" %}
+        <img
+          src="{{ character.image | relative_url }}"
+          alt="Portrait of {{ character.name }}"
+          class="profile-card__img"
+          loading="lazy"
+        />
+      {% else %}
+        <!-- Placeholder shown when no image is provided -->
+        <div class="profile-card__placeholder" aria-hidden="true">
+          <span class="profile-card__initials">{{ character.name | upcase | slice: 0, 2 }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Header info -->
+    <div class="profile-card__body">
+      <p class="profile-card__role tag">{{ character.role }}</p>
+      <h2 class="profile-card__name">{{ character.name }}</h2>
+      <p class="profile-card__teaser">{{ character.teaser }}</p>
+
+      <!-- Accordion trigger -->
+      <button
+        class="profile-card__toggle"
+        aria-expanded="false"
+        aria-controls="bio-{{ forloop.index }}"
+      >
+        <span class="profile-card__toggle-label">Read Full Bio</span>
+        <span class="profile-card__toggle-icon" aria-hidden="true">▾</span>
+      </button>
+
+      <!-- Expandable bio -->
+      <div
+        class="profile-card__bio"
+        id="bio-{{ forloop.index }}"
+        hidden
+      >
+        <p>{{ character.bio }}</p>
+      </div>
+    </div>
+
+  </article>
+  {% endfor %}
+</section>
+
+<script>
+  /* Accordion: toggle bio panels on button click or Enter/Space keypress. */
+  document.querySelectorAll('.profile-card__toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var panel    = document.getElementById(btn.getAttribute('aria-controls'));
+      var label    = btn.querySelector('.profile-card__toggle-label');
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (expanded) {
+        panel.hidden = true;
+        label.textContent = 'Read Full Bio';
+        btn.classList.remove('profile-card__toggle--open');
+      } else {
+        panel.hidden = false;
+        label.textContent = 'Close Bio';
+        btn.classList.add('profile-card__toggle--open');
+      }
+    });
+  });
+</script>

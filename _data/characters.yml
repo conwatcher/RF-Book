@@ -1,0 +1,35 @@
+# Character Profiles for Red Foundations
+# ----------------------------------------
+# To add a new character, copy one of the entries below and fill in the fields.
+#
+# Fields:
+#   name   – Character's full name (required)
+#   role   – Title or function on the colony (required)
+#   teaser – One or two sentence public-facing summary; no major spoilers (required)
+#   bio    – Full public bio shown in the expandable accordion (required)
+#   image  – Path to a portrait image, e.g. /assets/images/characters/jana-reyes.jpg
+#            Leave as "" or omit the field if no image is available yet.
+# ----------------------------------------
+
+- name: "Jana Reyes"
+  role: "Colony Engineer, Amazonis Planitia Settlement"
+  teaser: "A pragmatic systems engineer whose instinct for improvisation keeps the colony's infrastructure alive—often at personal cost."
+  bio: >
+    Jana Reyes arrived on Mars as part of the third infrastructure cohort, recruited for her expertise in closed-loop life support and pressure system design.
+    Where others see finished specs, Jana sees the gaps—the tolerances that look fine on paper until a dust storm drops the temperature forty degrees in six hours.
+    Quiet by nature but exacting in practice, she has earned the trust of colleagues who know that her voice in a briefing room means something has been missed.
+    Her relationship with authority is complicated: she follows procedure when it protects people and bypasses it when it doesn't.
+    Off-shift, she keeps a handwritten log of system failures—not to assign blame, but because she believes the colony's survival depends on learning every lesson the first time.
+  image: ""
+
+- name: "Director Alden Marsh"
+  role: "Colonial Administration Director, Earth Liaison Division"
+  teaser: "The senior Earth-appointed administrator overseeing colonial resource allocation—a man who believes order and survival are the same word."
+  bio: >
+    Alden Marsh spent twenty years in institutional governance before being appointed to the colonial liaison post, and it shows.
+    He speaks in measured sentences, arrives prepared, and has never publicly lost his composure.
+    To his supporters, Marsh represents stability: a steady hand ensuring that Earth's investment in the settlement is not squandered by frontier improvisation.
+    To his critics, he is the face of a system that treats the colony as an asset rather than a community.
+    Marsh does not dismiss those concerns—he considers them a manageable cost of governance.
+    What he is less willing to examine is whether the framework he upholds was ever designed with colonist welfare as its first priority.
+  image: ""

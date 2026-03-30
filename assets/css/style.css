@@ -246,3 +246,147 @@ p{margin:0 0 14px}
   .nav{gap:6px}
   .nav a{padding:8px}
 }
+
+/* ─── Character Profiles page ──────────────────────────────────────────────── */
+
+/* Hero intro */
+.profiles-hero{
+  margin-bottom: 32px;
+}
+.profiles-hero__sub{
+  max-width: 640px;
+  color: var(--muted);
+}
+
+/* Profiles grid: 2 columns on wide screens, 1 on mobile */
+.profiles-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr));
+  gap: 20px;
+}
+
+/* Individual profile card */
+.profile-card{
+  display: flex;
+  gap: 20px;
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(13,18,32,.55);
+  transition: border-color .15s ease;
+}
+.profile-card:hover{
+  border-color: rgba(225,29,46,.35);
+}
+
+/* Portrait column */
+.profile-card__portrait{
+  flex-shrink: 0;
+  width: 90px;
+}
+.profile-card__img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+/* Initials placeholder when no image is available */
+.profile-card__placeholder{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(225,29,46,.30), rgba(13,18,32,.80));
+  border: 1px solid rgba(225,29,46,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-card__initials{
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--red2);
+  letter-spacing: .06em;
+}
+
+/* Text body */
+.profile-card__body{
+  flex: 1;
+  min-width: 0;
+}
+.profile-card__role{
+  margin: 0 0 4px;
+  font-family: var(--mono);
+  color: rgba(255,255,255,.65);
+  font-size: .84rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.profile-card__name{
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+.profile-card__teaser{
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 0 0 14px;
+}
+
+/* Accordion toggle button */
+.profile-card__toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(225,29,46,.30);
+  background: rgba(225,29,46,.08);
+  color: var(--text);
+  font-size: .88rem;
+  cursor: pointer;
+  transition: background .12s ease, border-color .12s ease;
+}
+.profile-card__toggle:hover,
+.profile-card__toggle:focus-visible{
+  background: rgba(225,29,46,.18);
+  border-color: rgba(225,29,46,.60);
+  outline: none;
+}
+.profile-card__toggle:focus-visible{
+  outline: 2px solid var(--red2);
+  outline-offset: 2px;
+}
+.profile-card__toggle-icon{
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.profile-card__toggle--open .profile-card__toggle-icon{
+  transform: rotate(180deg);
+}
+
+/* Expanded bio panel */
+.profile-card__bio{
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.65;
+}
+.profile-card__bio p{
+  margin: 0;
+}
+
+/* Responsive: stack portrait on very small screens */
+@media (max-width: 480px){
+  .profile-card{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

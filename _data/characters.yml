@@ -1,48 +1,25 @@
 # Character Profiles for Red Foundations
 # ----------------------------------------
-# To add a new character, copy one of the entries below and fill in the fields.
-#
-# Fields:
-#   name   – Character's full name (required)
-#   role   – Title or function on the colony (required)
-#   teaser – One or two sentence public-facing summary; no major spoilers (required)
-#   bio    – Full public bio shown in the expandable accordion (required)
-#   image  – Path to a portrait image, e.g. /assets/images/characters/jack-masters.jpg
-#            Leave as "" or omit the field if no image is available yet.
-# ----------------------------------------
-
 - name: "Jack Masters"
   role: "Architect of Mars — Engineer, Visionary, and Catalyst of Humanity's First Interplanetary Civilization"
-  teaser: "The man who made Mars possible. The space elevator. The Ceresium energy grid. The colony's breathable atmosphere. All of it built in eleven months — and the gap between what is possible and what Jack Masters made real is precisely where the Red Foundations series begins."
-  bio: >
-    Jack Masters is the man who made Mars possible. The space elevator. The Ceresium energy grid. The colony's breathable atmosphere. The real-time communication link spanning 140 million miles of empty space. By any measure, the achievements Jack Masters delivered in eleven months should have taken human civilization five decades to accomplish — and that gap between what is possible and what Jack Masters made real is precisely where the Red Foundations series begins.
-    He is not easy to describe. Average height. Dark eyes that seem to register more than they reveal. A quiet manner that somehow carries the authority of absolute certainty. He wears no uniform, holds no title, answers to no government. His stated purpose is simple: give humanity the tools it needs to take the next step, then get out of the way.
-    What Jack is, exactly, is the question that echoes through the entire series. He insists he is human. Virtually everyone who meets him believes him — and is unsettled by the fact that they're not entirely sure why.
+  teaser: "The man who made Mars possible. The space elevator. The Ceresium energy grid. The colony's breathable atmosphere. All of it built in eleven months."
+  bio: "Jack Masters is the man who made Mars possible. The space elevator. The Ceresium energy grid. The colony's breathable atmosphere. The real-time communication link spanning 140 million miles of empty space. By any measure, the achievements Jack Masters delivered in eleven months should have taken human civilization five decades to accomplish. He is not easy to describe. Average height. Dark eyes that seem to register more than they reveal. A quiet manner that somehow carries the authority of absolute certainty. He wears no uniform, holds no title, answers to no government. His stated purpose is simple: give humanity the tools it needs to take the next step, then get out of the way. What Jack is, exactly, is the question that echoes through the entire series."
   image: "/assets/images/jack-masters.jpg"
 
 - name: "Dr. Amara Okonkwo"
   role: "Colony Leader, Mars Primary Settlement — Physicist, Administrator, and Architect of Martian Self-Governance"
   teaser: "A physicist who learned to govern. A leader who believes that the most important thing a person in power can do is build institutions that outlast them."
-  bio: >
-    A physicist who learned to govern. A leader who believes that the most important thing a person in power can do is build institutions that outlast them. An administrator who runs a settlement of thousands of people on a hostile planet with the calm patience of someone who understands that Mars doesn't forgive complacency — and neither does history.
-    Dr. Amara Okonkwo did not inherit her position. She was elected to it, by colonists who chose her through a process of their own design, on their own terms, without asking anyone's permission. That distinction matters to her. It matters to them. In a colony where the question of who ultimately answers to whom — the people on Mars, or the governments that sent them — grows louder every year, the manner of her selection is itself a political statement.
-    She is not a revolutionary. She is something harder to argue with: a pragmatist who has done the math, and whose math keeps arriving at the same answer. Mars is not a colony. Not anymore. The only question left is whether the rest of the world is ready to admit it.
+  bio: "Dr. Amara Okonkwo did not inherit her position. She was elected to it, by colonists who chose her through a process of their own design, on their own terms, without asking anyone's permission. That distinction matters to her. It matters to them. In a colony where the question of who ultimately answers to whom — the people on Mars, or the governments that sent them — grows louder every year, the manner of her selection is itself a political statement. She is not a revolutionary. She is something harder to argue with: a pragmatist who has done the math, and whose math keeps arriving at the same answer. Mars is not a colony. Not anymore."
   image: "/assets/images/amara-okonkwo.jpg"
 
 - name: "James Reeves"
   role: "Director of Colonial Operations, Mars City — Administrator, Earth Liaison, and the Man Caught Between Two Worlds"
   teaser: "James Reeves runs Mars City the way a surgeon runs an operating room — with absolute precision, zero tolerance for improvisation, and the quiet understanding that any mistake he makes will be measured in lives."
-  bio: >
-    James Reeves runs Mars City the way a surgeon runs an operating room — with absolute precision, zero tolerance for improvisation, and the quiet understanding that any mistake he makes will be measured in lives.
-    He arrived as Earth's man. He carries Earth's directives, files Earth's reports, and enforces the frameworks that Earth's governments designed before the first colonist set foot on Martian soil. He does this not because he is incurious, but because he understands that a colony of three hundred people on a hostile planet cannot afford the luxury of institutional chaos.
-    But three years into the posting, James Reeves has started asking a question that Earth never anticipated: what happens when doing this job correctly means doing it differently than Earth intended? He hasn't answered it yet. He's stopped pretending he isn't asking. The gap between those two positions is where the story lives.
- image: "/assets/images/james-reeves.jpg"
+  bio: "James Reeves runs Mars City the way a surgeon runs an operating room — with absolute precision, zero tolerance for improvisation, and the quiet understanding that any mistake he makes will be measured in lives. He arrived as Earth's man. He carries Earth's directives, files Earth's reports, and enforces the frameworks that Earth's governments designed before the first colonist set foot on Martian soil. But three years into the posting, James Reeves has started asking a question that Earth never anticipated: what happens when doing this job correctly means doing it differently than Earth intended? He has not answered it yet. He has stopped pretending he is not asking."
+  image: "/assets/images/james-reeves.jpg"
 
 - name: "Marcus Webb"
   role: "Commander, Mars Space Force Detachment — Earth's Shield, the Colony's Sword, and a Man Deciding Which He Is"
   teaser: "Earth sent Marcus Webb to Mars to keep the peace. What they didn't tell him was which peace — theirs or ours."
-  bio: >
-    Earth sent Marcus Webb to Mars to keep the peace. What they didn't tell him was which peace — theirs or ours.
-    Webb commands the only armed force on Mars. He enforces colonial law, manages Earth's security directives, and watches a population of three hundred people slowly stop thinking of themselves as Earth citizens. He sees it happening in the small things first — the way they refer to Earth as somewhere else, the way they calculate distances in sols instead of days, the way they have begun, quietly and without announcement, to govern themselves.
-    He understands exactly what it means. He has read enough history to know how this kind of drift ends. What he has not yet decided is whether his job is to stop it — or to make sure that when it happens, it happens without bloodshed. He hasn't answered that question yet. But the moment when he will have to is getting closer.
+  bio: "Earth sent Marcus Webb to Mars to keep the peace. What they didn't tell him was which peace — theirs or ours. Webb commands the only armed force on Mars. He enforces colonial law, manages Earth's security directives, and watches a population of three hundred people slowly stop thinking of themselves as Earth citizens. He sees it happening in the small things first — the way they refer to Earth as somewhere else, the way they calculate distances in sols instead of days. He understands exactly what it means. What he has not yet decided is whether his job is to stop it — or to make sure that when it happens, it happens without bloodshed."
   image: "/assets/images/marcus-webb.jpg"

@@ -1,7 +1,83 @@
 ---
 layout: default
 title: Character Profiles
+permalink: /characters/
 ---
+
+<style>
+  .characters-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .characters-intro {
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .character-card {
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    background-color: rgba(255,255,255,0.03);
+  }
+
+  .character-card h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+  }
+
+  .character-role {
+    color: #c0392b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .character-teaser {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .character-card details summary {
+    cursor: pointer;
+    color: #e8a020;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    list-style: none;
+    display: inline-block;
+    border-bottom: 1px solid #e8a020;
+    padding-bottom: 2px;
+  }
+
+  .character-card details summary:hover {
+    color: #f0b84a;
+    border-bottom-color: #f0b84a;
+  }
+
+  .character-card details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .character-bio {
+    color: #bbb;
+    line-height: 1.8;
+    margin-top: 0.8rem;
+    border-left: 3px solid #c0392b;
+    padding-left: 1rem;
+  }
+</style>
 
 <section class="characters-page">
   <h1>Character Profiles</h1>
@@ -18,7 +94,7 @@ title: Character Profiles
         <p class="character-role">{{ character.role }}</p>
         <p class="character-teaser">{{ character.teaser }}</p>
         <details>
-          <summary>Read full profile</summary>
+          <summary>▸ Read Full Profile</summary>
           <p class="character-bio">{{ character.bio }}</p>
         </details>
       </div>

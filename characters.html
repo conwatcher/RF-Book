@@ -24,6 +24,19 @@ permalink: /characters/
     padding: 1.8rem 2rem;
     margin-bottom: 2rem;
     background-color: rgba(255,255,255,0.03);
+    overflow: hidden;
+  }
+
+  .character-portrait {
+    float: left;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #333;
   }
 
   .character-card h2 {
@@ -76,6 +89,13 @@ permalink: /characters/
     margin-top: 0.8rem;
     border-left: 3px solid #c0392b;
     padding-left: 1rem;
+    clear: left;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 </style>
 
@@ -85,7 +105,7 @@ permalink: /characters/
 
   <div class="characters-grid">
     {% for character in site.data.characters %}
-    <div class="character-card">
+    <div class="character-card clearfix">
       {% if character.image and character.image != "" %}
       <img src="{{ character.image }}" alt="{{ character.name }}" class="character-portrait" />
       {% endif %}

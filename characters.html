@@ -1,17 +1,28 @@
-<html>
-<head>
-    <title>Character Profiles</title>
-</head>
-<body>
-<h1>Character Profiles</h1>
-<div id="profiles" style="display: flex; flex-wrap: wrap; gap: 20px;
-font-family: sans-serif;">
-<div style="border: 1px solid #ccc; padding: 15px; border-
-radius: 8px; width: 300px;">
-<h2 style="margin-top: 0; ">Character Name</h2> <p×strong>Role:</strong> Protagonist</p>
-<p>Insert your character description here. Copilot created
-the house, but we need to move the furniture in!</p›
-</div>
-</div>
-</body>
-</html>
+---
+layout: default
+title: Character Profiles
+---
+
+<section class="characters-page">
+  <h1>Character Profiles</h1>
+  <p class="characters-intro">The men and women who built humanity's first civilization beyond Earth.</p>
+
+  <div class="characters-grid">
+    {% for character in site.data.characters %}
+    <div class="character-card">
+      {% if character.image and character.image != "" %}
+      <img src="{{ character.image }}" alt="{{ character.name }}" class="character-portrait" />
+      {% endif %}
+      <div class="character-info">
+        <h2>{{ character.name }}</h2>
+        <p class="character-role">{{ character.role }}</p>
+        <p class="character-teaser">{{ character.teaser }}</p>
+        <details>
+          <summary>Read full profile</summary>
+          <p class="character-bio">{{ character.bio }}</p>
+        </details>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

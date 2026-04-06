@@ -44,5 +44,51 @@ description: Book profile for Red Foundations by P.J. Cereste.
 
 <p class="series-note"><em>Red Foundations is Book One of a planned multi-book series. The Red Foundations Universe expands across the full arc of Mars City's first generation — from first contact to the slow, complicated, earned emergence of something that might, one day, call itself independent.</em></p>
 
+<hr />
+
+<h2 style="color:#ffffff; font-size:1.1rem; margin-bottom:0.5rem;">What Readers Are Saying</h2>
+
+<style>
+  #goodreads-widget {
+    font-family: georgia, serif;
+    padding: 18px 0;
+    width:500px;
+  }
+  #goodreads-widget h1 {
+    font-weight:normal;
+    font-size: 16px;
+    border-bottom: 1px solid #BBB596;
+    margin-bottom: 0;
+  }
+  #goodreads-widget a {
+    text-decoration: none;
+    color:#CC0000;
+  }
+  iframe{
+    background-color: #1A1A1A;
+  }
+  #goodreads-widget a:hover { text-decoration: underline; }
+  #goodreads-widget a:active {
+    color:#CC0000;
+  }
+  #gr_footer {
+    width: 100%;
+    border-top: 1px solid #BBB596;
+    text-align: right;
+  }
+  #goodreads-widget .gr_branding{
+    color: #382110;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+</style>
+<div id="goodreads-widget">
+  <div id="gr_header"><h1><a rel="nofollow" href="https://www.goodreads.com/book/show/250317520-red-foundations">Reader Reviews — Red Foundations</a></h1></div>
+  <iframe sandbox id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&format=html&header_text=Reader+Reviews+%E2%80%94+Red+Foundations&isbn=B0GV3DPXNS&links=CC0000&min_rating=&num_reviews=&review_back=1A1A1A&stars=CC0000&stylesheet=&text=FFFFFF" width="500" height="300" frameborder="0"></iframe>
+  <div id="gr_footer">
+    <a class="gr_branding" target="_blank" rel="nofollow noopener noreferrer" href="https://www.goodreads.com/book/show/250317520-red-foundations?utm_medium=api&utm_source=reviews_widget">Reviews from Goodreads.com</a>
+  </div>
+</div>
   </article>
 </main>

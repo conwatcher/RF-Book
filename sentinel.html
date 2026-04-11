@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SENTINEL — Mars Colony Monitoring and Reporting System. Query the colony AI from Red Foundations by P.J. Cereste.">
+<title>SENTINEL — Access Terminal | Red Foundations</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&family=Exo+2:ital,wght@0,200;0,300;0,400;1,200&display=swap');
+
+:root {
+  --bg:          #020608;
+  --bg-panel:    #060d12;
+  --bg-card:     #0a141a;
+  --red:         #8b1a1a;
+  --red-bright:  #c0392b;
+  --red-dim:     #4a0e0e;
+  --red-glow:    rgba(192,57,43,0.18);
+  --text:        #b8cfd8;
+  --text-dim:    #4a6a78;
+  --text-bright: #d8eaf2;
+  --text-label:  #8b1a1a;
+  --border:      rgba(139,26,26,0.3);
+  --border-hi:   rgba(139,26,26,0.65);
+  --mono:        'Share Tech Mono', monospace;
+  --display:     'Rajdhani', sans-serif;
+  --body:        'Exo 2', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scanlines */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px,
+    transparent 1px, transparent 4px
+  );
+  pointer-events: none;
+  z-index: 500;
+}
+
+/* Radial vignette */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%,
+    transparent 40%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+  z-index: 499;
+}
+
+/* ── ANIMATED GRID BACKGROUND ──────────────────────────────── */
+.grid-bg {
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  z-index: 0;
+  animation: grid-drift 80s linear infinite;
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 48px 48px; }
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────────── */
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+/* ── TOP STRIP ──────────────────────────────────────────────── */
+.top-strip {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--red) 20%,
+    var(--red-bright) 50%,
+    var(--red) 80%,
+    transparent 100%
+  );
+  z-index: 600;
+}
+
+/* ── SITE NAV ───────────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 12px; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  z-index: 600;
+}
+
+.nav-site {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--text-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-site:hover { color: var(--text); }
+
+.nav-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+/* ── MAIN CARD ──────────────────────────────────────────────── */
+.terminal-card {
+  width: 100%;
+  max-width: 680px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hi);
+  position: relative;
+  animation: card-in 1.2s ease both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Red glow border effect */
+.terminal-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--red-bright);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.terminal-card:hover::before { opacity: 0.25; }
+
+/* Corner marks */
+.terminal-card::after {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px;
+  width: 12px; height: 12px;
+  border-top: 2px solid var(--red-bright);
+  border-left: 2px solid var(--red-bright);
+}
+
+.corner-br {
+  position: absolute;
+  bottom: -4px; right: -4px;
+  width: 12px; height: 12px;
+  border-bottom: 2px solid var(--red-bright);
+  border-right: 2px solid var(--red-bright);
+}
+
+/* ── CARD HEADER BAR ────────────────────────────────────────── */
+.card-header {
+  background: #040a0e;
+  border-bottom: 1px solid var(--border-hi);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terminal-dots {
+  display: flex; gap: 5px;
+}
+
+.terminal-dots span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red   { background: #3a0808; border: 1px solid #6a1010; }
+.dot-amber { background: #2a2000; border: 1px solid #5a4400; }
+.dot-green {
+  background: #2ecc71;
+  border: 1px solid #27ae60;
+  box-shadow: 0 0 5px rgba(46,204,113,0.6);
+  animation: dot-pulse 3s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(46,204,113,0.6); }
+  50%       { box-shadow: 0 0 10px rgba(46,204,113,1); }
+}
+
+.card-header-title {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+}
+
+.card-header-status {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--red);
+}
+
+/* ── CARD BODY ──────────────────────────────────────────────── */
+.card-body {
+  padding: 36px 40px 40px;
+}
+
+/* Classification stamp */
+.classification {
+  display: inline-block;
+  border: 1px solid var(--red-dim);
+  padding: 2px 10px;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  color: var(--red);
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+/* System name */
+.system-name {
+  font-family: var(--display);
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--text-bright);
+  line-height: 1;
+  margin-bottom: 4px;
+  text-shadow: 0 0 40px rgba(192,57,43,0.3);
+  animation: name-in 1.4s ease both 0.3s;
+}
+
+@keyframes name-in {
+  from { opacity: 0; letter-spacing: 0.5em; }
+  to   { opacity: 1; letter-spacing: 0.25em; }
+}
+
+.system-name .accent { color: var(--red-bright); }
+
+.system-subtitle {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--red) 0%, var(--border) 100%);
+  margin-bottom: 28px;
+  opacity: 0.5;
+}
+
+/* Status readout */
+.status-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+  animation: fade-in 1s ease both 0.6s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.status-cell {
+  background: var(--bg-card);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.status-cell .lbl {
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.status-cell .val {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.status-cell .val.green { color: #2ecc71; }
+.status-cell .val.red   { color: var(--red-bright); }
+
+/* Description */
+.description {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 12px;
+  animation: fade-in 1s ease both 0.8s;
+}
+
+.description strong {
+  color: var(--text-bright);
+  font-weight: 400;
+}
+
+.access-note {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  font-family: var(--mono);
+  animation: fade-in 1s ease both 0.9s;
+  line-height: 1.6;
+}
+
+.access-note span {
+  color: var(--red-bright);
+}
+
+/* ── ACCESS BUTTON ──────────────────────────────────────────── */
+.access-btn {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--red-bright);
+  color: var(--text-bright);
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.25s;
+  animation: fade-in 1s ease both 1.1s;
+}
+
+.access-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.access-btn:hover::before { transform: scaleX(1); }
+
+.access-btn:hover {
+  color: #fff;
+  box-shadow: 0 0 30px rgba(139,26,26,0.5),
+              0 0 60px rgba(139,26,26,0.2);
+}
+
+.access-btn span { position: relative; z-index: 1; }
+
+.btn-sub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  margin-top: 4px;
+  transition: color 0.25s;
+  position: relative; z-index: 1;
+}
+
+.access-btn:hover .btn-sub { color: rgba(255,255,255,0.6); }
+
+/* ── WARNING BLOCK ──────────────────────────────────────────── */
+.warning-block {
+  margin-top: 20px;
+  border: 1px solid var(--red-dim);
+  padding: 12px 16px;
+  animation: fade-in 1s ease both 1.2s;
+}
+
+.warning-block .warning-label {
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  color: var(--red);
+  margin-bottom: 6px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.warning-block p {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ── FOOTER DATA ────────────────────────────────────────────── */
+.card-footer {
+  border-top: 1px solid var(--border);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #040a0e;
+}
+
+.footer-left {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+
+.footer-right a {
+  font-family: var(--display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer-right a:hover { color: var(--text); }
+
+/* ── AMBIENT DATA STRIP ─────────────────────────────────────── */
+.data-strip {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  animation: fade-in 1s ease both 1.3s;
+}
+
+.data-strip-item {
+  flex: 1;
+  background: var(--bg-card);
+  padding: 8px 12px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.data-strip-item .dval {
+  display: block;
+  font-size: 10px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+/* ── SCROLLING TRANSMISSION LOG ─────────────────────────────── */
+.tx-log {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 680px;
+  height: 28px;
+  overflow: hidden;
+  position: relative;
+  animation: fade-in 1s ease both 1.4s;
+}
+
+.tx-log-inner {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  white-space: nowrap;
+  animation: scroll-tx 40s linear infinite;
+  display: inline-block;
+}
+
+@keyframes scroll-tx {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .card-body { padding: 24px 22px 28px; }
+  .system-name { font-size: 36px; }
+  .status-block { grid-template-columns: 1fr 1fr; }
+  .status-cell:last-child { display: none; }
+  .site-nav { padding: 0 16px; }
+  .card-footer { padding: 10px 22px; }
+  .data-strip-item:nth-child(n+4) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-strip"></div>
+<div class="grid-bg"></div>
+
+<nav class="site-nav">
+  <a href="https://redfoundationsbook.com" class="nav-site">← Red Foundations</a>
+  <div class="nav-label">Colony Systems Access</div>
+</nav>
+
+<main class="page">
+
+  <div class="terminal-card">
+    <div class="corner-br"></div>
+
+    <!-- Card Header -->
+    <div class="card-header">
+      <div class="card-header-left">
+        <div class="terminal-dots">
+          <span class="dot-red"></span>
+          <span class="dot-amber"></span>
+          <span class="dot-green"></span>
+        </div>
+        <div class="card-header-title">TERMINAL NODE — MARS-PRIMARY-01</div>
+      </div>
+      <div class="card-header-status">● SYSTEM ONLINE</div>
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body">
+
+      <div class="classification">ACCESS CLASS — PUBLIC TERMINAL</div>
+
+      <div class="system-name">SENT<span class="accent">I</span>NEL</div>
+      <div class="system-subtitle">Mars Colony Monitoring &amp; Reporting System</div>
+
+      <div class="divider"></div>
+
+      <!-- Live status cells -->
+      <div class="status-block">
+        <div class="status-cell">
+          <span class="lbl">System Status</span>
+          <span class="val green">OPERATIONAL</span>
+        </div>
+        <div class="status-cell">
+          <span class="lbl">Colony Year</span>
+          <span class="val" id="colony-year">YEAR 20</span>
+        </div>
+        <div class="status-cell">
+          <span class="lbl">Query Access</span>
+          <span class="val">OPEN</span>
+        </div>
+        <div class="status-cell">
+          <span class="lbl">Atmo Pressure</span>
+          <span class="val" id="live-pressure">89.4 mbar</span>
+        </div>
+        <div class="status-cell">
+          <span class="lbl">Dust Index</span>
+          <span class="val">LOW</span>
+        </div>
+        <div class="status-cell">
+          <span class="lbl">Earth Delay</span>
+          <span class="val" id="live-delay">14.2 min</span>
+        </div>
+      </div>
+
+      <p class="description">
+        SENTINEL is the institutional monitoring and reporting AI embedded in the infrastructure of the primary Mars colony. It holds records on colony operations, atmospheric data, personnel, infrastructure, history, and the <strong>Mars Autonomy Accord</strong>. Some records are classified. Some are restricted pending review. All queries are logged.
+      </p>
+
+      <p class="access-note">
+        <span>TERMINAL ACCESS REQUIRES AUTHENTICATION.</span><br>
+        A free Claude account is required to query this terminal. If you do not have one, you will be prompted to create one at no cost before your session begins.
+      </p>
+
+      <!-- THE ACCESS BUTTON — replace YOUR_SHARE_LINK_HERE with the Claude Project link -->
+      <a
+        href="YOUR_SHARE_LINK_HERE"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="access-btn"
+      >
+        <span>
+          ACCESS SENTINEL TERMINAL
+          <span class="btn-sub">AUTHENTICATE TO PROCEED</span>
+        </span>
+      </a>
+
+      <div class="warning-block">
+        <span class="warning-label">⚠ Classification Notice</span>
+        <p>
+          Certain records held by SENTINEL are classified at Tier 3 or above and will not be disclosed through this terminal. All queries are logged and reviewed. Attempts to access restricted data will be noted. This terminal is a public access node for the Red Foundations universe — an interactive experience tied to the novel by P.J. Cereste.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Card Footer -->
+    <div class="card-footer">
+      <div class="footer-left">RED FOUNDATIONS UNIVERSE &nbsp;|&nbsp; P.J. CERESTE &nbsp;|&nbsp; 2026</div>
+      <div class="footer-right"><a href="https://redfoundationsbook.com">redfoundationsbook.com</a></div>
+    </div>
+
+  </div>
+
+  <!-- Ambient data strip -->
+  <div class="data-strip">
+    <div class="data-strip-item">ELEVATOR STATUS<span class="dval">NOMINAL</span></div>
+    <div class="data-strip-item">ACTIVE QUERIES<span class="dval" id="query-count">—</span></div>
+    <div class="data-strip-item">SURFACE TEMP<span class="dval" id="live-temp">-21°C</span></div>
+    <div class="data-strip-item">POWER GRID<span class="dval">STABLE</span></div>
+    <div class="data-strip-item">MSF STATUS<span class="dval">PATROL</span></div>
+  </div>
+
+  <!-- Scrolling transmission log -->
+  <div class="tx-log">
+    <span class="tx-log-inner" id="tx-log-text"></span>
+  </div>
+
+</main>
+
+<script>
+// ── LIVE DATA SIMULATION ─────────────────────────────────────────────────────
+function updateLive() {
+  const p = (88.8 + Math.random() * 1.2).toFixed(1);
+  document.getElementById('live-pressure').textContent = p + ' mbar';
+
+  const t = -21 + Math.floor(Math.random() * 4 - 2);
+  document.getElementById('live-temp').textContent = t + '°C';
+
+  const delay = (7 + 7 * Math.abs(Math.sin(Date.now() / 900000))).toFixed(1);
+  document.getElementById('live-delay').textContent = delay + ' min';
+
+  const count = Math.floor(Math.random() * 6) + 1;
+  document.getElementById('query-count').textContent = count;
+}
+
+updateLive();
+setInterval(updateLive, 20000);
+
+// ── SCROLLING TX LOG ─────────────────────────────────────────────────────────
+const txMessages = [
+  'SENTINEL LOG 7312.04 — Elevator cycle 1,891 complete. Payload: 94.8%. No anomalies.',
+  'SENTINEL LOG 7312.07 — Atmospheric processor efficiency: 91.3%. Above baseline.',
+  'SENTINEL LOG 7312.09 — Subsurface isotope variance flagged in Grid 7-North. Source: unverified. Status: monitoring.',
+  'SENTINEL LOG 7312.11 — MSF Squadron Two, patrol complete. Northern quadrant clear.',
+  'SENTINEL LOG 7312.14 — Agricultural Sector 3 yield: 3.1% above monthly projection. Cause: unresolved.',
+  'SENTINEL LOG 7312.17 — Earth transmission received. Delay: 14.2 minutes. Content: administrative.',
+  'SENTINEL LOG 7312.19 — Water recycling efficiency: 98.4%. Zero unscheduled downtime: 18 years, 214 sols.',
+  'SENTINEL LOG 7312.22 — Ceresium export container sealed. Elevator queue: confirmed.',
+  'SENTINEL LOG 7312.25 — Unauthorized handshake detected in communications log. Duration: 0.4 seconds. Origin: unverified.',
+  'SENTINEL LOG 7312.28 — Phobos transit 2 of 3: visible horizon west. Deimos: below horizon.',
+  'SENTINEL LOG 7312.31 — Colony population count: 543 permanent residents. Medical: stable.',
+  'SENTINEL LOG 7312.34 — Sector 7-Delta survey designation: restricted. Inquiry access: Tier 4.',
+];
+
+function buildTxLog() {
+  const doubled = [...txMessages, ...txMessages].join('     ///     ');
+  const el = document.getElementById('tx-log-text');
+  el.textContent = doubled;
+}
+
+buildTxLog();
+</script>
+
+</body>
+</html>

@@ -610,8 +610,28 @@ async function streamResponse(userMessage) {
       }
     }
 
-    cursor.remove();
+cursor.remove();
     bodyEl.textContent = fullText;
+
+    // ── QUESTION LOGGING ──────────────────────────────────────────────────
+    const LOGGER_URL = "https://conwatcher--7c8465b235cd11f1b5e642b51c65c3df.web.val.run";
+    const deferralPhrase = "SENTINEL does not have a verified data record for that inquiry";
+    if (fullText.includes(deferralPhrase)) {
+      try {
+        await fetch(LOGGER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            question: userMessage,
+            response: fullText,
+          })
+        });
+      } catch (logErr) {
+        console.warn('Question logging failed:', logErr.message);
+      }
+    }
+    // ── END QUESTION LOGGING ──────────────────────────────────────────────
+
     conversationHistory.push({ role: 'assistant', content: fullText });
 
   } catch (err) {

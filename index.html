@@ -34,7 +34,35 @@ body_class: home
       <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
       <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
     </div>
+<div class="hr"></div>
 
+<!-- SENTINEL ACCESS -->
+<div style="
+  border: 1px solid rgba(139,26,26,0.5);
+  background: linear-gradient(135deg, #0a0505, #110808);
+  padding: 1.2rem 1.4rem;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+">
+  <div style="
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c0392b, transparent);
+  "></div>
+  <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: #8b1a1a; margin-bottom: 0.4rem; font-family: monospace;">
+    SENTINEL MONITORING SYSTEM — ONLINE
+  </div>
+  <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: #aac; line-height: 1.6;">
+    Query the colony AI. Access infrastructure records, personnel files, and the history of the Mars settlement — if clearance permits.
+  </p>
+  <a href="{{ '/sentinel_landing.html' | relative_url }}"
+     style="display: inline-block; padding: 0.45rem 1.4rem; border: 1px solid #8b1a1a; color: #c8dde8; font-size: 0.8rem; font-family: monospace; letter-spacing: 0.15em; text-decoration: none; text-transform: uppercase; transition: background 0.2s;"
+     onmouseover="this.style.background='rgba(139,26,26,0.3)'"
+     onmouseout="this.style.background='transparent'">
+    Access SENTINEL Terminal
+  </a>
+</div>
     <div class="hr"></div>
 
     <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">

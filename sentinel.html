@@ -374,6 +374,40 @@
     50%       { opacity: 1;   transform: scale(1.2); }
   }
 
+ /* ── SENTINEL PERSONNEL CARDS ─────────────────────────── */
+.sentinel-card{display:none;margin:1.5rem 0;border:1px solid #8b0000;background:#0d0d0d;position:relative;font-family:'Share Tech Mono','Courier New',monospace;max-width:640px;box-shadow:0 0 18px rgba(139,0,0,0.25);animation:cardReveal 0.6s ease-out forwards}
+.sentinel-card.active{display:block}
+@keyframes cardReveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sentinel-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#8b0000,#cc0000,#8b0000,transparent)}
+.sc-header{background:#110000;border-bottom:1px solid #4a0000;padding:7px 14px;display:flex;justify-content:space-between;align-items:center}
+.sc-header .ht{font-family:'Rajdhani',monospace;font-size:11px;font-weight:700;letter-spacing:3px;color:#cc0000;text-transform:uppercase}
+.sc-header .hc{font-size:9px;letter-spacing:2px;color:#8b0000;border:1px solid #4a0000;padding:2px 8px;text-transform:uppercase}
+.sc-body{display:grid;grid-template-columns:150px 1fr}
+.sc-portrait-col{border-right:1px solid #3a0000;padding:12px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#0a0000}
+.sc-portrait-frame{width:126px;height:152px;border:1px solid #8b0000;position:relative;overflow:hidden;box-shadow:0 0 12px rgba(139,0,0,0.4)}
+.sc-portrait-frame::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border:3px solid rgba(139,0,0,0.15);z-index:2;pointer-events:none}
+.sc-portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:contrast(1.05) brightness(0.9)}
+.sc-scanline{position:absolute;top:0;left:0;right:0;height:2px;background:rgba(139,0,0,0.5);animation:scanDown 3s linear infinite;z-index:3}
+@keyframes scanDown{from{top:0;opacity:.7}to{top:100%;opacity:0}}
+.sc-id{font-size:8px;letter-spacing:2px;color:#5a0000;text-align:center;text-transform:uppercase}
+.sc-data-col{padding:12px 14px}
+.sc-name{font-family:'Rajdhani',monospace;font-size:17px;font-weight:700;color:#e8e0d0;letter-spacing:1px;margin-bottom:4px;border-bottom:1px solid #2a0000;padding-bottom:7px;line-height:1.1}
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:8px 0}
+.sc-row{padding:5px 0;border-bottom:1px solid #1a0000}
+.sc-row.fw{grid-column:span 2}
+.sc-lbl{font-size:8px;letter-spacing:2px;color:#6a0000;text-transform:uppercase;margin-bottom:1px}
+.sc-val{font-size:11px;color:#b0a090;letter-spacing:.5px}
+.sc-val.redacted{color:#8b0000;letter-spacing:3px;font-size:10px}
+.sc-badge{display:inline-block;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:2px 6px;border:1px solid;margin-top:1px}
+.sc-badge.active{border-color:#2a5a2a;color:#5aaa5a;background:rgba(42,90,42,.15)}
+.sc-badge.departed{border-color:#5a2a2a;color:#aa5a5a;background:rgba(90,42,42,.15)}
+.sc-badge.restricted{border-color:#5a4a0a;color:#aaaa5a;background:rgba(90,80,10,.15)}
+.sc-note{margin-top:9px;padding:7px 9px;background:#080808;border-left:2px solid #4a0000;font-size:10px;color:#7a6a5a;line-height:1.5;letter-spacing:.3px}
+.sc-note::before{content:'SENTINEL NOTE // ';color:#5a0000;font-size:9px;letter-spacing:2px}
+.sc-footer{background:#080000;border-top:1px solid #2a0000;padding:5px 14px;display:flex;justify-content:space-between}
+.sc-footer span{font-size:8px;letter-spacing:2px;color:#3a0000;text-transform:uppercase}
+@media(max-width:500px){.sc-body{grid-template-columns:1fr}.sc-portrait-col{border-right:none;border-bottom:1px solid #3a0000}.sc-portrait-frame{width:80px;height:96px}.sc-grid{grid-template-columns:1fr}.sc-row.fw{grid-column:span 1}}
+  
   @media (max-width: 600px) {
     .header-sub { display: none; }
     .sysbar-item:nth-child(n+4) { display: none; }
@@ -407,6 +441,114 @@
   </div>
 
   <div id="messages"></div>
+<!-- SENTINEL PERSONNEL CARDS -->
+<div id="sentinel-cards-container">
+
+<div class="sentinel-card" id="card-jack-masters">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Omega — Eyes Only</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Jack%20Masters%202.png" alt="Jack Masters"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-001</div></div>
+<div class="sc-data-col"><div class="sc-name">Jack Masters</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Catalyst / Infrastructure Architect</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val redacted">[ CLASSIFIED ]</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Pre-Colony / Initiating Party</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val redacted">[ CLASSIFIED ]</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val redacted">[ RECORD SEALED — ACCESS DENIED ]</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge departed">Departed</span></div></div>
+</div><div class="sc-note">Subject does not conform to standard personnel classification protocols. Record maintained for historical integrity only.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-james-reeves">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Command Authority</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/James%20Reeves.png" alt="James Reeves"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-002</div></div>
+<div class="sc-data-col"><div class="sc-name">James Reeves</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Commander-in-Chief, Mars City</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">United States — citizenship renounced</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Pre-Colony / Administrative Founding</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">10+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Mars City Command — Tharsis Elevator Hub</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject maintains institutional neutrality with measurable operational efficiency. Elevator access logs available on request.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-marcus-webb">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Command Authority</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Marcus%20Webb.png" alt="Marcus Webb"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-003</div></div>
+<div class="sc-data-col"><div class="sc-name">Marcus Webb</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Commander, Mars Space Force</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">Australia — Perth</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 1 — Engineering Crew, Year 0</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">10+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Mars City Security Command</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject demonstrated exceptional stress tolerance and hostile-environment judgment during foundational operations. Citizenship status: renounced.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-amara-okonkwo">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Administrative — Senior</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Dr.%20Okonkwo.png" alt="Dr. Amara Okonkwo"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-004</div></div>
+<div class="sc-data-col"><div class="sc-name">Dr. Amara Okonkwo</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Colony Leader / Physicist</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">Nigeria</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 1 — Engineering Crew, Year 0</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">10+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Colony Government Center — Primary Colony</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject exhibits consistent pattern of absorbing institutional burden without delegation failure. Psychological profile: stable under extreme pressure.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-sarah-liu">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Administrative</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Dr.%20Sarah%20Liu.png" alt="Dr. Sarah Liu"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-005</div></div>
+<div class="sc-data-col"><div class="sc-name">Dr. Sarah Liu</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">First Colony Leader / Civil Engineer</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">United States — Colorado</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 3 — Colonial Leadership, Year 5</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">5+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Colony Government Center — Founding Administration</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject demonstrated atypical resistance to external authority structures during selection and deployment. Record flagged for continued monitoring.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-patricia-chen">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Administrative</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Patricia%20Chen.png" alt="Dr. Patricia Chen"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-006</div></div>
+<div class="sc-data-col"><div class="sc-name">Dr. Patricia Chen</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Governance Architect / Legal Counsel</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">United States</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 3 — Civilian Wave, Year 5</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">5+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Colony Administrative Division — Dispute Resolution</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject constructs institutional frameworks with measurable precision. Colony legal architecture attributed in significant part to subject's methodology.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-elena-vasquez">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Restricted — Need to Know</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Dr.%20Elena%20Vasquez.png" alt="Dr. Elena Vasquez"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-007</div></div>
+<div class="sc-data-col"><div class="sc-name">Dr. Elena Vasquez</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Astronomer / Survey Operations Lead</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">Mexico</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 1 — Engineering Crew, Year 0</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">10+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val redacted">[ CLASSIFIED RESEARCH DESIGNATION ]</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge restricted">Restricted</span></div></div>
+</div><div class="sc-note">Subject's survey data initiated Priority Anomaly Protocol. Further detail classified under Sector 7-Delta access restrictions.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+<div class="sentinel-card" id="card-thomas-whitmore">
+<div class="sc-header"><span class="ht">SENTINEL — Personnel Record</span><span class="hc">Clearance: Advisory</span></div>
+<div class="sc-body"><div class="sc-portrait-col"><div class="sc-portrait-frame"><img src="https://raw.githubusercontent.com/conwatcher/RF-Book/main/characters/Thomas%20Whitmore.png" alt="Thomas Whitmore"><div class="sc-scanline"></div></div><div class="sc-id">SUBJECT-008</div></div>
+<div class="sc-data-col"><div class="sc-name">Thomas Whitmore</div><div class="sc-grid">
+<div class="sc-row"><div class="sc-lbl">Designation</div><div class="sc-val">Historian / Political Advisor</div></div>
+<div class="sc-row"><div class="sc-lbl">Origin</div><div class="sc-val">United Kingdom — Cambridge</div></div>
+<div class="sc-row"><div class="sc-lbl">Wave</div><div class="sc-val">Wave 3 — Civilian Wave, Year 5</div></div>
+<div class="sc-row"><div class="sc-lbl">Years of Service</div><div class="sc-val">5+</div></div>
+<div class="sc-row fw"><div class="sc-lbl">Current Assignment</div><div class="sc-val">Colony Advisory Council</div></div>
+<div class="sc-row"><div class="sc-lbl">Status</div><div><span class="sc-badge active">Active</span></div></div>
+</div><div class="sc-note">Subject applies historical pattern analysis to ongoing institutional decisions. Designated informal advisor to Colony Leadership. No security flags on record.</div></div></div>
+<div class="sc-footer"><span>Mars City Infrastructure Authority</span><span>File integrity: verified</span></div></div>
+
+</div><!-- end sentinel-cards-container -->  
 
   <div id="input-area">
     <div class="input-wrapper">
@@ -632,6 +774,30 @@ cursor.remove();
     }
     // ── END QUESTION LOGGING ──────────────────────────────────────────────
 
+   // ── PERSONNEL CARD TRIGGER ────────────────────────────
+const cardTriggers = {
+  'card-jack-masters':   ['jack masters','jack','masters'],
+  'card-james-reeves':   ['james reeves','reeves','commander reeves'],
+  'card-marcus-webb':    ['marcus webb','webb','commander webb'],
+  'card-amara-okonkwo':  ['amara okonkwo','okonkwo','dr. okonkwo','dr okonkwo'],
+  'card-sarah-liu':      ['sarah liu','liu','dr. liu','dr liu'],
+  'card-patricia-chen':  ['patricia chen','chen','dr. chen','dr chen'],
+  'card-elena-vasquez':  ['elena vasquez','vasquez','dr. vasquez','dr vasquez'],
+  'card-thomas-whitmore':['thomas whitmore','whitmore'],
+};
+const lowerQuery = userMessage.toLowerCase();
+document.querySelectorAll('.sentinel-card').forEach(c => c.classList.remove('active'));
+for (const [cardId, keywords] of Object.entries(cardTriggers)) {
+  if (keywords.some(kw => lowerQuery.includes(kw))) {
+    const card = document.getElementById(cardId);
+    if (card) {
+      card.classList.add('active');
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+    }
+    break;
+  }
+}
+// ── END PERSONNEL CARD TRIGGER ────────────────────────
     conversationHistory.push({ role: 'assistant', content: fullText });
 
   } catch (err) {

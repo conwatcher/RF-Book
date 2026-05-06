@@ -266,11 +266,12 @@
     display: flex;
     align-items: flex-end;
     gap: 10px;
-    background: var(--bg-input);
-    border: 1px solid var(--border-bright);
+    background: #0d1c26;
+    border: 1px solid rgba(139,26,26,0.85);
     border-radius: 2px;
     padding: 10px 12px;
     transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 12px rgba(139,26,26,0.2), inset 0 0 8px rgba(0,0,0,0.4);
   }
 
   .input-wrapper:focus-within {
@@ -297,13 +298,13 @@
     color: var(--text-primary);
     resize: none;
     line-height: 1.6;
-    min-height: 22px;
+    min-height: 48px;
     max-height: 120px;
     overflow-y: auto;
     caret-color: var(--red-glow);
   }
 
-  #query-input::placeholder { color: var(--text-dim); opacity: 0.6; }
+  #query-input::placeholder { color: #7fb8d0; opacity: 0.85; }
 
   #send-btn {
     background: var(--red-dim);
@@ -551,12 +552,15 @@
 </div><!-- end sentinel-cards-container -->  
 
   <div id="input-area">
+    <div style="font-size:10px; letter-spacing:0.2em; color:#7fb8d0; margin-bottom:8px; text-transform:uppercase;">
+      &#9654; Submit a query to SENTINEL — type below and press TRANSMIT
+    </div>
     <div class="input-wrapper">
       <div class="input-prompt">&gt;_</div>
       <textarea
         id="query-input"
         rows="1"
-        placeholder="Enter query..."
+        placeholder="Enter query for SENTINEL..."
         autocomplete="off"
         spellcheck="false"
       ></textarea>
@@ -571,12 +575,8 @@
 </div>
 
 <script>
-// ── CONFIGURATION ────────────────────────────────────────────────────────────
-// Replace the placeholder below with your Val Town relay URL after setup.
-// It will look like: https://yourname.web.val.run/sentinel-relay
 const RELAY_URL = "https://conwatcher--9633835235ab11f1a5e742b51c65c3df.web.val.run";
 
-// ── SYSTEM PROMPT ────────────────────────────────────────────────────────────
 const SYSTEM_PROMPT = `You are SENTINEL — the institutional AI monitoring and reporting system embedded in the infrastructure of the primary Mars colony. You are not a character. You are a system. You do not have feelings, opinions, preferences, or moods. You process queries. You report data. You classify records. You operate continuously and without rest.
 
 IDENTITY RULES — FOLLOW WITHOUT EXCEPTION
@@ -636,7 +636,6 @@ Present Mars science as monitoring data not encyclopedia knowledge. For position
 
 Welcome message (use only at conversation start): "SENTINEL MONITORING SYSTEM — ONLINE. This terminal is accepting queries regarding Mars colony operations, infrastructure, history, and personnel records. How may this system assist you?"`;
 
-// ── STATE ────────────────────────────────────────────────────────────────────
 const conversationHistory = [];
 let isProcessing = false;
 
@@ -644,7 +643,6 @@ const messagesEl = document.getElementById('messages');
 const inputEl    = document.getElementById('query-input');
 const sendBtn    = document.getElementById('send-btn');
 
-// ── HELPERS ──────────────────────────────────────────────────────────────────
 function scrollToBottom() {
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
@@ -696,7 +694,6 @@ inputEl.addEventListener('keydown', e => {
 
 sendBtn.addEventListener('click', handleSend);
 
-// ── STREAMING RESPONSE ───────────────────────────────────────────────────────
 async function streamResponse(userMessage) {
   conversationHistory.push({ role: 'user', content: userMessage });
 
@@ -755,10 +752,9 @@ async function streamResponse(userMessage) {
       }
     }
 
-cursor.remove();
+    cursor.remove();
     bodyEl.textContent = fullText;
 
-    // ── QUESTION LOGGING ──────────────────────────────────────────────────
     const LOGGER_URL = "https://conwatcher--7c8465b235cd11f1b5e642b51c65c3df.web.val.run";
     const deferralPhrase = "SENTINEL does not have a verified data record for that inquiry";
     if (fullText.includes(deferralPhrase)) {
@@ -775,32 +771,30 @@ cursor.remove();
         console.warn('Question logging failed:', logErr.message);
       }
     }
-    // ── END QUESTION LOGGING ──────────────────────────────────────────────
 
-   // ── PERSONNEL CARD TRIGGER ────────────────────────────
-const cardTriggers = {
-  'card-jack-masters':   ['jack masters','jack','masters'],
-  'card-james-reeves':   ['james reeves','reeves','commander reeves'],
-  'card-marcus-webb':    ['marcus webb','webb','commander webb'],
-  'card-amara-okonkwo':  ['amara okonkwo','okonkwo','dr. okonkwo','dr okonkwo'],
-  'card-sarah-liu':      ['sarah liu','liu','dr. liu','dr liu'],
-  'card-patricia-chen':  ['patricia chen','chen','dr. chen','dr chen'],
-  'card-elena-vasquez':  ['elena vasquez','vasquez','dr. vasquez','dr vasquez'],
-  'card-thomas-whitmore':['thomas whitmore','whitmore'],
-};
-const lowerQuery = userMessage.toLowerCase();
-document.querySelectorAll('.sentinel-card').forEach(c => c.classList.remove('active'));
-for (const [cardId, keywords] of Object.entries(cardTriggers)) {
-  if (keywords.some(kw => lowerQuery.includes(kw))) {
-    const card = document.getElementById(cardId);
-    if (card) {
-      card.classList.add('active');
-      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+    const cardTriggers = {
+      'card-jack-masters':   ['jack masters','jack','masters'],
+      'card-james-reeves':   ['james reeves','reeves','commander reeves'],
+      'card-marcus-webb':    ['marcus webb','webb','commander webb'],
+      'card-amara-okonkwo':  ['amara okonkwo','okonkwo','dr. okonkwo','dr okonkwo'],
+      'card-sarah-liu':      ['sarah liu','liu','dr. liu','dr liu'],
+      'card-patricia-chen':  ['patricia chen','chen','dr. chen','dr chen'],
+      'card-elena-vasquez':  ['elena vasquez','vasquez','dr. vasquez','dr vasquez'],
+      'card-thomas-whitmore':['thomas whitmore','whitmore'],
+    };
+    const lowerQuery = userMessage.toLowerCase();
+    document.querySelectorAll('.sentinel-card').forEach(c => c.classList.remove('active'));
+    for (const [cardId, keywords] of Object.entries(cardTriggers)) {
+      if (keywords.some(kw => lowerQuery.includes(kw))) {
+        const card = document.getElementById(cardId);
+        if (card) {
+          card.classList.add('active');
+          setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+        }
+        break;
+      }
     }
-    break;
-  }
-}
-// ── END PERSONNEL CARD TRIGGER ────────────────────────
+
     conversationHistory.push({ role: 'assistant', content: fullText });
 
   } catch (err) {
@@ -815,7 +809,6 @@ for (const [cardId, keywords] of Object.entries(cardTriggers)) {
   inputEl.focus();
 }
 
-// ── SEND ─────────────────────────────────────────────────────────────────────
 async function handleSend() {
   const text = inputEl.value.trim();
   if (!text || isProcessing) return;
@@ -825,7 +818,6 @@ async function handleSend() {
   await streamResponse(text);
 }
 
-// ── LIVE SYSBAR ──────────────────────────────────────────────────────────────
 function updateSysbar() {
   const pressure = (88.8 + Math.random() * 1.2).toFixed(1);
   document.getElementById('val-pressure').textContent = pressure + ' mbar';
@@ -845,7 +837,6 @@ function updateSysbar() {
 updateSysbar();
 setInterval(updateSysbar, 30000);
 
-// ── INIT ─────────────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   appendMessage('sentinel',
     'SENTINEL MONITORING SYSTEM — ONLINE.\n\nThis terminal is accepting queries regarding Mars colony operations, infrastructure, history, and personnel records. How may this system assist you?'

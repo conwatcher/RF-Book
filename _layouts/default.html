@@ -7,14 +7,12 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-JY49FBEKLP');
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{{ page.title }} | {{ site.title }}</title>
-
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
   <!-- MailerLite Universal -->
@@ -30,11 +28,9 @@ gtag('config', 'G-JY49FBEKLP');
 </head>
 <body class="{{ page.body_class }}">
   {% include header.html %}
-
   <main class="main">
     {{ content }}
   </main>
-
   {% include footer.html %}
 </body>
 </html>

@@ -78,7 +78,7 @@ description: Privacy policy for RedFoundationsBook.com, including email newslett
   </div>
 
   <h2>Who We Are</h2>
-  <p>This website is operated by Red Foundations Publishing, the imprint of P.J. Cereste, author of <em>Red Foundations</em> and the Mars City Chronicles series. The site exists to share information about the books, connect with readers, and deliver the free Mars Colony Handbook to newsletter subscribers.</p>
+  <p>This website is operated by Red Foundations Publishing, the imprint of P.J. Cereste, author of <em>Red Foundations</em> and the Red Foundations Universe. The site exists to share information about the books, connect with readers, and deliver the free Mars Colony Handbook to newsletter subscribers.</p>
 
   <h2>Information We Collect</h2>
   <p>We collect information in two ways: information you give us directly, and information collected automatically when you visit.</p>

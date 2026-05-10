@@ -2,7 +2,7 @@
 layout: default
 title: The Book
 permalink: /book/
-description: Book profile for Red Foundations by P.J. Cereste.
+description: Read about Red Foundations by P.J. Cereste, Book 1 of the Mars City Chronicles — a hard science-fiction series where colonists confront survival, Earth dependency, and the cost of independence.
 ---
 <main class="page-content">
   <article>

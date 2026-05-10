@@ -46,7 +46,46 @@ description: Read about Red Foundations by P.J. Cereste, Book 1 of the Red Found
 
 <hr />
 
-<h2 style="color:#ffffff; font-size:1.1rem; margin-bottom:0.5rem;">What Readers Are Saying</h2>
+<h2 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem;">What Readers Are Saying</h2>
+
+<style>
+  .review-pullquote {
+    border-left: 3px solid #8b0000;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .review-pullquote .review-stars {
+    color: #cc3333;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .review-pullquote blockquote {
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    font-style: italic;
+    border: none;
+  }
+  .review-pullquote .review-attribution {
+    color: #777;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+  .review-pullquote .review-attribution span {
+    color: #cc3333;
+  }
+</style>
+
+<div class="review-pullquote">
+  <div class="review-stars">★★★★★</div>
+  <blockquote>"This is an amazing story and completely different than I thought it would be, in the best way! If you love sci-fi, action, and stories that keep you guessing and entertained throughout, give this one a shot!"</blockquote>
+  <p class="review-attribution">— Rebecca Brandt &nbsp;|&nbsp; <span>★★★★★ Verified Amazon Review</span></p>
+</div>
 
 <style>
   #goodreads-widget {

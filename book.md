@@ -2,7 +2,7 @@
 layout: default
 title: The Book
 permalink: /book/
-description: Read about Red Foundations by P.J. Cereste, Book 1 of the Mars City Chronicles — a hard science-fiction series where colonists confront survival, Earth dependency, and the cost of independence.
+description: Read about Red Foundations by P.J. Cereste, Book 1 of the Red Foundations Universe — a hard science-fiction series where colonists confront survival, Earth dependency, and the cost of independence.
 ---
 <main class="page-content">
   <article>
@@ -42,7 +42,7 @@ description: Read about Red Foundations by P.J. Cereste, Book 1 of the Mars City
 
 <hr />
 
-<p class="series-note"><em>Red Foundations is Book One of a planned multi-book series. The Red Foundations Universe expands across the full arc of Mars City's first generation — from first contact to the slow, complicated, earned emergence of something that might, one day, call itself independent.</em></p>
+<p class="series-note"><em>Red Foundations is Book One of the Red Foundations Universe. Book Two, The Red Meridian, is already written — release date to be announced. The series follows Mars City's first generation across the full arc of what it takes to build something that can call itself independent.</em></p>
 
 <hr />
 

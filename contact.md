@@ -2,7 +2,7 @@
 layout: default
 title: Contact
 permalink: /contact/
-description: Contact Cereste Publishing for press, review, bookstore, or rights inquiries related to Red Foundations by P.J. Cereste.
+description: Contact Red Foundations Publishing for press, review, bookstore, or rights inquiries related to Red Foundations by P.J. Cereste.
 ---
 
 <style>
@@ -83,7 +83,7 @@ description: Contact Cereste Publishing for press, review, bookstore, or rights 
 <section class="contact-page">
 
   <h1>Contact</h1>
-  <p class="contact-intro">For press, review, bookstore, or rights inquiries related to <em>Red Foundations</em> and the Mars City Chronicles series, use the information below. The newsletter is the best way for readers to stay connected with new releases and series updates.</p>
+  <p class="contact-intro">For press, review, bookstore, or rights inquiries related to <em>Red Foundations</em> and the Red Foundations Universe, use the information below. The newsletter is the best way for readers to stay connected with new releases and series updates.</p>
 
   <div class="contact-block">
     <h2>Press &amp; Inquiries</h2>

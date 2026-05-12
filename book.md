@@ -38,7 +38,7 @@ description: Read about Red Foundations by P.J. Cereste, Book 1 of the Red Found
 
 <p><strong>Available in ebook and print.</strong></p>
 
-<a href="https://a.co/d/0bINYe4x" class="btn">Pre-Order on Amazon</a>
+<a href="https://a.co/d/0bINYe4x" class="btn">Buy Now on Amazon</a>
 
 <hr />
 

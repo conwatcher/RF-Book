@@ -178,6 +178,12 @@ description: Read about Red Foundations by P.J. Cereste, Book 1 of the Red Found
       <blockquote>"This is an amazing story and completely different than I thought it would be, in the best way! If you love sci-fi, action, and stories that keep you guessing and entertained throughout, give this one a shot!"</blockquote>
       <p class="review-attribution">— Rebecca Brandt &nbsp;|&nbsp; <span>★★★★★ Verified Amazon Review</span></p>
     </div>
+    
+<div class="review-pullquote">
+  <div class="review-stars">★★★★</div>
+  <blockquote>"A compelling science fiction epic that masterfully explores the intersection of advanced technology and the fundamental messiness of human governance... The book shines when it moves beyond simple terraforming to focus on the 'crucible' of building a new civilization, where success isn't defined by conquering a planet, but by learning to work within its constraints."</blockquote>
+  <p class="review-attribution">— E Rose &nbsp;|&nbsp; <span>★★★★ Verified Amazon Review</span></p>
+</div>
 
     <div id="goodreads-widget">
       <div id="gr_header"><h1><a rel="nofollow" href="https://www.goodreads.com/book/show/250317520-red-foundations">Reader Reviews — Red Foundations</a></h1></div>

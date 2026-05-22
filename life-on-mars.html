@@ -445,6 +445,7 @@ permalink: /life-on-mars/
     <a class="lom-nav__link" href="#currency">Currency</a>
     <a class="lom-nav__link" href="#language">Language</a>
     <a class="lom-nav__link" href="#transport">Transport</a>
+    <a class="lom-nav__link" href="#getting-there">Getting There</a>
     <a class="lom-nav__link" href="#waynet">The Waynet</a>
     <a class="lom-nav__link" href="#communications">Communications</a>
     <a class="lom-nav__link" href="#measurements">Measurements</a>
@@ -905,9 +906,69 @@ permalink: /life-on-mars/
     </div>
   </section>
 
-  <!-- SECTION 9: WAYNET -->
+  <!-- SECTION 9: GETTING THERE -->
+  <section class="lom-section" id="getting-there">
+    <span class="lom-section__label">Section 09 &nbsp;•&nbsp; Getting There</span>
+    <h2 class="lom-section__heading">The Bridge Between Worlds</h2>
+    <p class="lom-body">
+      Mars is not close. That has never changed. What changed is what it costs to get there — 
+      and the elevator is why.
+    </p>
+    <p class="lom-body">
+      Before the space elevator system existed, reaching Mars meant designing an entire ship around 
+      the problem of leaving Earth. Ninety percent of a rocket's mass was propellant. The ship had 
+      to survive atmospheric launch, survive the void, survive atmospheric entry on arrival. Every 
+      kilogram of useful cargo fought its way to Mars through two atmospheric walls and a 
+      quarter-billion miles of space.
+    </p>
+    <p class="lom-body">
+      The elevators removed the walls.
+    </p>
+    <p class="lom-body">
+      Each elevator is a solid vertical structure the footprint of a city block, rising from an 
+      equatorial anchor point to an orbital spaceport at the top. Passengers ride enclosed inside it. 
+      Cargo is lifted on open platforms. Ships are rigged to the exterior and towed electrically to 
+      the spaceport, where they are fueled, inspected, and crewed before departure. There is no launch. 
+      There is no re-entry on arrival. Leaving Mars is a port operation — scheduled, methodical, 
+      governed by orbital windows and traffic management rather than fire and physics.
+    </p>
+
+    <div class="lom-stat-row">
+      <div class="lom-stat-block">
+        <div class="lom-stat-block__value">4</div>
+        <div class="lom-stat-block__label">Elevators built — two on Mars, two on Earth, all simultaneously</div>
+      </div>
+      <div class="lom-stat-block">
+        <div class="lom-stat-block__value">6–7 mo</div>
+        <div class="lom-stat-block__label">Early era transit time, one way</div>
+      </div>
+      <div class="lom-stat-block">
+        <div class="lom-stat-block__value">86.2</div>
+        <div class="lom-stat-block__label">Days — advanced era passenger transit, direct route</div>
+      </div>
+    </div>
+
+    <div class="lom-transport-grid">
+      <div class="lom-transport-card">
+        <div class="lom-transport-card__era">Early Era</div>
+        <div class="lom-transport-card__name">The Long Crossing</div>
+        <div class="lom-transport-card__desc">Before Ceresium propulsion reached the ships, the crossing took what orbital mechanics demanded: six to seven months, one way. That is the minimum-energy path between two planets whose orbits make them neighbors only briefly, and strangers most of the time. Supply chains to Mars were measured in seasons, not weeks. Early colonists who left Earth understood they were not going somewhere they could come back from quickly.</div>
+      </div>
+      <div class="lom-transport-card">
+        <div class="lom-transport-card__era">Advanced Era</div>
+        <div class="lom-transport-card__name">86.2 Days</div>
+        <div class="lom-transport-card__desc">As Ceresium integration advanced into reactor architecture, ship propulsion changed with it. Nuclear thermal drives running Ceresium-enhanced reactor components operate at tolerances conventional materials cannot reach: hotter, longer, more efficiently. The result is a transit time, for passenger ships on direct routes, of 86.2 days. Cargo still travels the long way — automated freighters on efficient trajectories carry the bulk of what Mars needs on schedules planned a year out. The separation between fast people and slow mass is simply how the economy works. It always has been, on every ocean, in every era of shipping.</div>
+      </div>
+    </div>
+
+    <div class="lom-callout">
+      "Mars is still not close. But 86.2 days is a voyage, not an exile."
+    </div>
+  </section>
+
+  <!-- SECTION 10: WAYNET -->
   <section class="lom-section" id="waynet">
-    <span class="lom-section__label">Section 09 &nbsp;•&nbsp; Navigation</span>
+    <span class="lom-section__label">Section 10 &nbsp;•&nbsp; Navigation</span>
     <h2 class="lom-section__heading">The Waynet</h2>
     <p class="lom-body">
       Space navigation across the solar system is handled by the Kapoor Array — a solar-system-wide 
@@ -951,9 +1012,9 @@ permalink: /life-on-mars/
     </ul>
   </section>
 
-  <!-- SECTION 10: COMMUNICATIONS -->
+  <!-- SECTION 11: COMMUNICATIONS -->
   <section class="lom-section" id="communications">
-    <span class="lom-section__label">Section 10 &nbsp;•&nbsp; Communications</span>
+    <span class="lom-section__label">Section 11 &nbsp;•&nbsp; Communications</span>
     <h2 class="lom-section__heading">Near-Instant Across the Solar System</h2>
     <p class="lom-body">
       Communication between Mars and Earth — and across the solar system — operates through a 
@@ -983,9 +1044,9 @@ permalink: /life-on-mars/
     </div>
   </section>
 
-  <!-- SECTION 11: MEASUREMENTS -->
+  <!-- SECTION 12: MEASUREMENTS -->
   <section class="lom-section" id="measurements">
-    <span class="lom-section__label">Section 11 &nbsp;•&nbsp; Measurements</span>
+    <span class="lom-section__label">Section 12 &nbsp;•&nbsp; Measurements</span>
     <h2 class="lom-section__heading">Metric Only</h2>
     <p class="lom-body">
       Mars uses the metric system exclusively. Imperial measurements are an Earth cultural artifact 
@@ -1009,7 +1070,6 @@ permalink: /life-on-mars/
   var btn = document.getElementById('lom-back-top');
   if (!btn) return;
 
-  // Show button after scrolling 400px
   window.addEventListener('scroll', function() {
     if (window.scrollY > 400) {
       btn.classList.add('visible');
@@ -1018,7 +1078,6 @@ permalink: /life-on-mars/
     }
   }, { passive: true });
 
-  // Smooth scroll to top
   btn.addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });

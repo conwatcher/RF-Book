@@ -1,7 +1,12 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__left">
-      <img src="{{ '/assets/images/rf-publishing-logo.png' | relative_url }}" alt="Red Foundations Publishing logo" class="footer__logo" />
+      <video autoplay loop muted playsinline
+        class="footer__logo"
+        style="display:block;">
+        <source src="{{ '/assets/images/imprint_ani.mp4' | relative_url }}" type="video/mp4">
+        <img src="{{ '/assets/images/rf-publishing-logo.png' | relative_url }}" alt="Red Foundations Publishing logo" />
+      </video>
       <p class="micro">© {{ 'now' | date: '%Y' }} Red Foundations Publishing • P.J. Cereste</p>
     </div>
     <div class="footer__right">

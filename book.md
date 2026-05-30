@@ -1,196 +1,166 @@
 ---
 layout: default
-title: The Book
+title: The Books
 permalink: /book/
-description: Read about Red Foundations by P.J. Cereste, Book 1 of the Red Foundations Universe — a hard science-fiction series where colonists confront survival, Earth dependency, and the cost of independence.
+description: The Red Foundations Universe — a hard science-fiction series by P.J. Cereste. Explore Book One and Book Two of the series.
 ---
 
 <style>
-  .book-hero {
+  .series-hub-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .series-hub-header .series-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #cc3333;
+    margin-bottom: 0.75rem;
+  }
+
+  .series-hub-header h1 {
+    font-size: 2rem;
+    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+  }
+
+  .series-hub-header p {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .book-grid {
     display: flex;
     gap: 2.5rem;
+    justify-content: center;
     align-items: flex-start;
-    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
   }
 
-  .book-cover-col {
-    flex: 0 0 280px;
+  .book-card {
+    flex: 0 0 320px;
+    max-width: 340px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .book-cover-col img {
+  .book-card:hover {
+    border-color: rgba(204, 51, 51, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .book-card-cover {
     width: 100%;
-    height: auto;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .book-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    border-radius: 4px;
-    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
   }
 
-  .book-info-col {
+  .book-card:hover .book-card-cover img {
+    transform: scale(1.02);
+  }
+
+  .book-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    min-width: 0;
   }
 
-  .book-info-col h1 {
-    margin-top: 0;
+  .book-card-body .book-number {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #cc3333;
+    margin-bottom: 0.4rem;
   }
 
-  .book-info-col .btn {
+  .book-card-body h2 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+  }
+
+  .book-card-body p {
+    color: #cccccc;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .book-card-body .btn {
     display: inline-block;
-    margin-top: 1.5rem;
+    align-self: flex-start;
   }
 
-  @media (max-width: 680px) {
-    .book-hero {
+  @media (max-width: 720px) {
+    .book-grid {
       flex-direction: column;
       align-items: center;
     }
-    .book-cover-col {
+    .book-card {
       flex: 0 0 auto;
-      width: 220px;
-      max-width: 75%;
-    }
-    .book-info-col {
       width: 100%;
+      max-width: 380px;
     }
-  }
-
-  .review-pullquote {
-    border-left: 3px solid #8b0000;
-    background: rgba(255,255,255,0.03);
-    border-radius: 0 8px 8px 0;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .review-pullquote .review-stars {
-    color: #cc3333;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-  }
-  .review-pullquote blockquote {
-    margin: 0 0 0.75rem 0;
-    padding: 0;
-    color: #ddd;
-    font-size: 0.95rem;
-    line-height: 1.75;
-    font-style: italic;
-    border: none;
-  }
-  .review-pullquote .review-attribution {
-    color: #777;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-  }
-  .review-pullquote .review-attribution span {
-    color: #cc3333;
-  }
-
-  #goodreads-widget {
-    font-family: georgia, serif;
-    padding: 18px 0;
-    width: 500px;
-    max-width: 100%;
-  }
-  #goodreads-widget h1 {
-    font-weight: normal;
-    font-size: 16px;
-    border-bottom: 1px solid #BBB596;
-    margin-bottom: 0;
-  }
-  #goodreads-widget a {
-    text-decoration: none;
-    color: #CC0000;
-  }
-  iframe {
-    background-color: #1A1A1A;
-    max-width: 100%;
-  }
-  #goodreads-widget a:hover { text-decoration: underline; }
-  #goodreads-widget a:active { color: #CC0000; }
-  #gr_footer {
-    width: 100%;
-    border-top: 1px solid #BBB596;
-    text-align: right;
-  }
-  #goodreads-widget .gr_branding {
-    color: #382110;
-    font-size: 11px;
-    text-decoration: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 </style>
 
 <main class="page-content">
   <article>
 
-    <!-- TWO-COLUMN HERO: Cover left, hook + CTA right -->
-    <div class="book-hero">
-
-      <div class="book-cover-col">
-        <img src="/assets/images/book-cover.jpg" alt="Red Foundations book cover" />
-      </div>
-
-      <div class="book-info-col">
-        <h1>Red Foundations</h1>
-        <p class="subtitle">Book One of the Red Foundations Universe &bull; By P.J. Cereste</p>
-
-        <p>At 2:14 AM on an ordinary Tuesday, Dr. Elena Vasquez noticed that a comet had changed course. Not dramatically. Just enough to be impossible.</p>
-
-        <p>Comets follow predictable paths. They obey laws that have held since the solar system formed. C/2042 K1-A had deviated from its predicted trajectory by fifteen thousand kilometers over six weeks, as if something across the void had quietly redirected it. And the new path led directly to Mars.</p>
-
-        <p>The impact released the energy equivalent of five hundred thousand megatons. What followed was not the extinction event it would have been on Earth. It was an invitation.</p>
-
-        <p><strong>Available in ebook and print.</strong></p>
-
-        <a href="https://a.co/d/0bINYe4x" class="btn">Buy Now on Amazon</a>
-      </div>
-
+    <div class="series-hub-header">
+      <p class="series-label">Red Foundations Universe &bull; P.J. Cereste</p>
+      <h1>The Series</h1>
+      <p>Hard science fiction grounded in real physics, real politics, and the extraordinary difficulty of building something that lasts.</p>
     </div>
-    <!-- END TWO-COLUMN HERO -->
 
-    <!-- FULL-WIDTH DESCRIPTION -->
-    <p>Within days, Mars had a breathable atmosphere. Liquid water pooled in the lowlands. Temperatures climbed toward survivable. A planet that had been a destination for rovers and orbiters became, almost overnight, a place where humans could stand in open air. No one had planned for this. No one had a protocol. Humanity had forty-three days of warning and a choice it had never imagined having to make.</p>
+    <div class="book-grid">
 
-    <p>It chose to go.</p>
-
-    <p><em>Red Foundations</em> covers the first decade of Mars colonization — Years 0 through 10 — and the extraordinary, grinding, politically treacherous work of building a civilization from the ground up on a world that should not, by any right, exist in the state it does. The colonists who arrive are not explorers or adventurers. They are engineers, physicians, electricians, farmers, and administrators who signed on to build something that lasts. They are selected for competence and resilience, not prestige. And they arrive to find that someone — or something — has already laid the groundwork for what they are about to build.</p>
-
-    <p>James Reeves runs the logistics of survival from Mars City Control, holding the colony together through supply chain crises, infrastructure failures, and the slow accumulation of Earth's bureaucratic interference. Dr. Adaeze Okonkwo manages the political survival of the colony — a physicist turned colony leader who understands that independence is not declared, it is constructed, carefully, under conditions that can support it. Marcus Webb commands the Mars Space Force contingent, navigating the tension between his orders from Earth and his growing loyalty to the people he protects. And Jack Masters, who built the space elevator — four of them, simultaneously, across two planets — watches all of it with an intensity that no one quite knows how to read.</p>
-
-    <p>The colony is dependent on Earth. This is not a weakness the novel papers over — it is the central, structuring reality of everything that happens. Every supply ship matters. Every political negotiation with Earth carries existential stakes. The Mars Autonomy Accord, when it arrives at Year 10, is not a victory. It is a strategic delay, a calculated ten-year truce purchased at the price of acknowledging what the colony is not yet strong enough to survive without. The Independents call it surrender. Dr. Okonkwo calls it the only path to independence that will not destroy everything the colonists have built.</p>
-
-    <p>Beneath all of it, running through the infrastructure like a question no one has asked aloud yet, is the anomaly that started everything. C/2042 K1-A was not standard solar system material. Its spectral signature matched nothing in any database. It changed course on its own. And the colony it enabled is built, the more perceptive colonists are beginning to notice, in ways that suggest it was designed to be built exactly as it is being built — as if the blueprint already existed before the first human foot touched Martian soil.</p>
-
-    <p><em>Red Foundations</em> is hard science fiction in the tradition of rigorous worldbuilding and grounded political realism — a novel for readers who want Mars treated as a system, not a backdrop. The science is real. The politics are honest. The dependency is not resolved quickly or cheaply. And the question of what Jack Masters is actually testing, and why, will not be answered in Book One.</p>
-
-    <p>That is a promise, not a warning.</p>
-
-    <hr />
-
-    <p class="series-note"><em>Red Foundations is Book One of the Red Foundations Universe. Book Two, The Red Meridian, is already written — release date to be announced. The series follows Mars City's first generation across the full arc of what it takes to build something that can call itself independent.</em></p>
-
-    <hr />
-
-    <h2 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem;">What Readers Are Saying</h2>
-
-    <div class="review-pullquote">
-      <div class="review-stars">★★★★★</div>
-      <blockquote>"This is an amazing story and completely different than I thought it would be, in the best way! If you love sci-fi, action, and stories that keep you guessing and entertained throughout, give this one a shot!"</blockquote>
-      <p class="review-attribution">— Rebecca Brandt &nbsp;|&nbsp; <span>★★★★★ Verified Amazon Review</span></p>
-    </div>
-    
-<div class="review-pullquote">
-  <div class="review-stars">★★★★</div>
-  <blockquote>"A compelling science fiction epic that masterfully explores the intersection of advanced technology and the fundamental messiness of human governance... The book shines when it moves beyond simple terraforming to focus on the 'crucible' of building a new civilization, where success isn't defined by conquering a planet, but by learning to work within its constraints."</blockquote>
-  <p class="review-attribution">— E Rose &nbsp;|&nbsp; <span>★★★★ Verified Amazon Review</span></p>
-</div>
-
-    <div id="goodreads-widget">
-      <div id="gr_header"><h1><a rel="nofollow" href="https://www.goodreads.com/book/show/250317520-red-foundations">Reader Reviews — Red Foundations</a></h1></div>
-      <iframe sandbox id="the_iframe" src="https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&format=html&header_text=Reader+Reviews+%E2%80%94+Red+Foundations&isbn=B0GV3DPXNS&links=CC0000&min_rating=&num_reviews=&review_back=1A1A1A&stars=CC0000&stylesheet=&text=FFFFFF" width="500" height="300" frameborder="0"></iframe>
-      <div id="gr_footer">
-        <a class="gr_branding" target="_blank" rel="nofollow noopener noreferrer" href="https://www.goodreads.com/book/show/250317520-red-foundations?utm_medium=api&utm_source=reviews_widget">Reviews from Goodreads.com</a>
+      <!-- BOOK ONE -->
+      <div class="book-card">
+        <div class="book-card-cover">
+          <img src="/assets/images/Book1_cover.PNG" alt="Red Foundations book cover" />
+        </div>
+        <div class="book-card-body">
+          <p class="book-number">Book One</p>
+          <h2>Red Foundations</h2>
+          <p>A comet that should not exist strikes Mars and leaves it breathable. Humanity has forty-three days to decide whether to go. It goes. What follows is not exploration — it is the grinding, politically treacherous work of building a civilization from nothing on a world that was never supposed to be habitable.</p>
+          <a href="/books/red-foundations/" class="btn">Learn More</a>
+        </div>
       </div>
+
+      <!-- BOOK TWO -->
+      <div class="book-card">
+        <div class="book-card-cover">
+          <img src="/assets/images/Book2_Cover.PNG" alt="The Red Meridian book cover" />
+        </div>
+        <div class="book-card-body">
+          <p class="book-number">Book Two</p>
+          <h2>The Red Meridian</h2>
+          <p>Cal Calloway reads rock for a living. He knows what holds and what doesn't, what bears weight and what will eventually fail. He's never spoken to a room larger than a shift crew. Then he says one sentence at a rally, and nothing stays the same.</p>
+          <a href="/books/the-red-meridian/" class="btn">Learn More</a>
+        </div>
+      </div>
+
     </div>
 
   </article>

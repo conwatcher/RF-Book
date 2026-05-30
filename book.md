@@ -137,10 +137,12 @@ description: The Red Foundations Universe — a hard science-fiction series by P
 
       <!-- BOOK ONE -->
       <div class="book-card">
-        <div class="book-card-cover">
-          <img src="/assets/images/Book1_cover.PNG" alt="Red Foundations book cover" />
-        </div>
-        <div class="book-card-body">
+       <div class="book-card-cover">
+  <a href="/books/red-foundations/">
+    <img src="/assets/images/Book1_cover.PNG" alt="Red Foundations book cover" />
+  </a>
+</div>
+<div class="book-card-body">
           <p class="book-number">Book One</p>
           <h2>Red Foundations</h2>
           <p>A comet that should not exist strikes Mars and leaves it breathable. Humanity has forty-three days to decide whether to go. It goes. What follows is not exploration — it is the grinding, politically treacherous work of building a civilization from nothing on a world that was never supposed to be habitable.</p>
@@ -150,9 +152,11 @@ description: The Red Foundations Universe — a hard science-fiction series by P
 
       <!-- BOOK TWO -->
       <div class="book-card">
-        <div class="book-card-cover">
-          <img src="/assets/images/Book2_Cover.PNG" alt="The Red Meridian book cover" />
-        </div>
+       <div class="book-card-cover">
+  <a href="/books/the-red-meridian/">
+    <img src="/assets/images/Book2_Cover.PNG" alt="The Red Meridian book cover" />
+  </a>
+</div>
         <div class="book-card-body">
           <p class="book-number">Book Two</p>
           <h2>The Red Meridian</h2>

@@ -172,7 +172,7 @@ description: Red Foundations by P.J. Cereste — Book One of the Red Foundations
 
         <p><strong>Available in ebook and print.</strong></p>
 
-        <a href="https://a.co/d/0bINYe4x" class="btn">Buy Now on Amazon</a>
+        <a href="https://a.co/d/0bINYe4x" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
       </div>
 
     </div>

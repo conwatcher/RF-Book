@@ -97,6 +97,21 @@ description: The Red Meridian by P.J. Cereste — Book Two of the Red Foundation
     font-style: normal;
     margin-bottom: 0.5rem;
   }
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    background: #cc0000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease;
+  }
+  .btn:hover {
+    background: #aa0000;
+  }
 </style>
 
 <main class="page-content">

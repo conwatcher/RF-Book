@@ -2,71 +2,92 @@
 layout: default
 title: Home
 body_class: home
-description: Official site for Red Foundations by P.J. Cereste, Book 1 of an ongoing Mars science-fiction series about terraforming, survival, sovereignty, and the first generation of Mars City.
+description: Official site for the Red Foundations Universe by P.J. Cereste — a hard science-fiction series about terraforming, survival, sovereignty, and the first generation of Mars City.
 ---
 
 <!-- ORDER BANNER -->
-<div style="background: linear-gradient(90deg, #1a0000, #3a0000, #1a0000); border-top: 1px solid var(--red2); border-bottom: 1px solid var(--red2); text-align: center; padding: 0.85rem 1rem;">
-  <p style="margin: 0; font-size: 0.95rem; letter-spacing: 0.04em;">
-    <strong style="color: var(--red2);">RED FOUNDATIONS</strong>
-    <span style="color: #ccc;"> is available for purchase now! </span>
-    <strong style="color: #fff;"></strong>
-  </p>
-  <a href="https://a.co/d/0bINYe4x"
-     target="_blank"
-     rel="noopener"
-     style="display: inline-block; margin-top: 0.55rem; padding: 0.45rem 1.4rem; background: var(--red2); color: #fff; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px;">
-    Buy now on Amazon
-  </a>
+<div style="background: linear-gradient(90deg, #1a0000, #3a0000, #1a0000); border-top: 1px solid var(--red2); border-bottom: 1px solid var(--red2); padding: 0.85rem 1rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; text-align: center;">
+
+    <div>
+      <p style="margin: 0 0 0.4rem; font-size: 0.9rem; letter-spacing: 0.04em;">
+        <strong style="color: var(--red2);">RED FOUNDATIONS</strong>
+        <span style="color: #ccc;"> — Book One — Available Now</span>
+      </p>
+      <a href="https://a.co/d/0bINYe4x"
+         target="_blank"
+         rel="noopener"
+         style="display: inline-block; padding: 0.4rem 1.2rem; background: var(--red2); color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px;">
+        Buy Now on Amazon
+      </a>
+    </div>
+
+    <div style="width: 1px; height: 2rem; background: rgba(255,255,255,0.15); flex-shrink: 0;"></div>
+
+    <div>
+      <p style="margin: 0 0 0.4rem; font-size: 0.9rem; letter-spacing: 0.04em;">
+        <strong style="color: var(--red2);">THE RED MERIDIAN</strong>
+        <span style="color: #ccc;"> — Book Two — Pre-Order Now</span>
+      </p>
+      <a href="https://a.co/d/0in4Aua5"
+         target="_blank"
+         rel="noopener"
+         style="display: inline-block; padding: 0.4rem 1.2rem; background: transparent; color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px; border: 1px solid rgba(255,255,255,0.4);">
+        Pre-Order on Amazon
+      </a>
+    </div>
+
+  </div>
 </div>
 
 <section class="hero">
   <div>
-    <div class="kicker">Red Foundations • Science Fiction Series</div>
+    <div class="kicker">Red Foundations Universe • Science Fiction Series</div>
     <h1>{{ site.tagline }}</h1>
     <p>
-      <strong>Red Foundations</strong> is the first book in a planned series, set in a future where an alien impact triggers rapid terraforming on Mars.
-      The first decade of colonization becomes a test of survival, governance, and what "independence" really means.
+      <strong>Red Foundations</strong> is Book One of the Red Foundations Universe — a hard science-fiction series set in a future where an alien impact triggers rapid terraforming on Mars.
+      The first decade of colonization becomes a test of survival, governance, and what independence really means.
+      <strong>Book Two, The Red Meridian, arrives July 28, 2026.</strong>
     </p>
 
     <div class="hero__actions">
-      <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Book</a>
+      <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Series</a>
       <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
       <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
     </div>
-<div class="hr"></div>
+    <div class="hr"></div>
 
-<!-- SENTINEL ACCESS -->
-<div style="
-  border: 1px solid rgba(139,26,26,0.5);
-  background: linear-gradient(135deg, #0a0505, #110808);
-  padding: 1.2rem 1.4rem;
-  border-radius: 3px;
-  position: relative;
-  overflow: hidden;
-">
-  <div style="
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #c0392b, transparent);
-  "></div>
-  <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: #8b1a1a; margin-bottom: 0.4rem; font-family: monospace;">
-    SENTINEL MONITORING SYSTEM — ONLINE
-  </div>
-  <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: #aac; line-height: 1.6;">
-    Query the colony AI. Access infrastructure records, personnel files, and the history of the Mars settlement — if clearance permits.
-  </p>
-  <a href="{{ '/sentinel_landing.html' | relative_url }}"
-     style="display: inline-block; padding: 0.45rem 1.4rem; border: 1px solid #8b1a1a; color: #c8dde8; font-size: 0.8rem; font-family: monospace; letter-spacing: 0.15em; text-decoration: none; text-transform: uppercase; transition: background 0.2s;"
-     onmouseover="this.style.background='rgba(139,26,26,0.3)'"
-     onmouseout="this.style.background='transparent'">
-    Access SENTINEL Terminal
-  </a>
-</div>
+    <!-- SENTINEL ACCESS -->
+    <div style="
+      border: 1px solid rgba(139,26,26,0.5);
+      background: linear-gradient(135deg, #0a0505, #110808);
+      padding: 1.2rem 1.4rem;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    ">
+      <div style="
+        position: absolute; top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #c0392b, transparent);
+      "></div>
+      <div style="font-size: 0.7rem; letter-spacing: 0.2em; color: #8b1a1a; margin-bottom: 0.4rem; font-family: monospace;">
+        SENTINEL MONITORING SYSTEM — ONLINE
+      </div>
+      <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: #aac; line-height: 1.6;">
+        Query the colony AI. Access infrastructure records, personnel files, and the history of the Mars settlement — if clearance permits.
+      </p>
+      <a href="{{ '/sentinel_landing.html' | relative_url }}"
+         style="display: inline-block; padding: 0.45rem 1.4rem; border: 1px solid #8b1a1a; color: #c8dde8; font-size: 0.8rem; font-family: monospace; letter-spacing: 0.15em; text-decoration: none; text-transform: uppercase; transition: background 0.2s;"
+         onmouseover="this.style.background='rgba(139,26,26,0.3)'"
+         onmouseout="this.style.background='transparent'">
+        Access SENTINEL Terminal
+      </a>
+    </div>
     <div class="hr"></div>
 
     <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">
-      <p class="micro" style="margin:0">Days until <strong>Red Foundations</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">…</span></p>
+      <p class="micro" style="margin:0">Days until <strong>The Red Meridian</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">…</span></p>
     </div>
 
     <div class="hr"></div>
@@ -90,46 +111,46 @@ description: Official site for Red Foundations by P.J. Cereste, Book 1 of an ong
     </div>
   </div>
 
-<aside class="cover">
+  <aside class="cover">
 
-  <!-- Video 1: Corrected Book Trailer -->
-  <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
-    <iframe
-      src="https://www.youtube.com/embed/SwNXVM8U1Xo?rel=0&modestbranding=1"
-      title="Red Foundations — Official Book Trailer"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px;">
-    </iframe>
-  </div>
-  <div class="caption">Official Book Trailer • Red Foundations</div>
+    <!-- Video 1: Corrected Book Trailer -->
+    <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+      <iframe
+        src="https://www.youtube.com/embed/SwNXVM8U1Xo?rel=0&modestbranding=1"
+        title="Red Foundations — Official Book Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px;">
+      </iframe>
+    </div>
+    <div class="caption">Official Book Trailer • Red Foundations</div>
 
-  <div style="height:1rem;"></div>
+    <div style="height:1rem;"></div>
 
-  <!-- Video 2: Impact Site Survey Footage -->
-  <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
-    <iframe
-      src="https://www.youtube.com/embed/mxuQ_7Bjn9A?rel=0&modestbranding=1"
-      title="Amazonis Planitia Impact Site — C/2042 K1-A Survey Footage — Year 0"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px;">
-    </iframe>
-  </div>
-  <div class="caption">Amazonis Planitia Impact Site — C/2042 K1-A Survey Footage — Year 0</div>
+    <!-- Video 2: Impact Site Survey Footage -->
+    <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+      <iframe
+        src="https://www.youtube.com/embed/mxuQ_7Bjn9A?rel=0&modestbranding=1"
+        title="Amazonis Planitia Impact Site — C/2042 K1-A Survey Footage — Year 0"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px;">
+      </iframe>
+    </div>
+    <div class="caption">Amazonis Planitia Impact Site — C/2042 K1-A Survey Footage — Year 0</div>
 
-  <div style="height:1.5rem;"></div>
+    <div style="height:1.5rem;"></div>
 
-  <!-- Static Image: Transport Chamber -->
-  <img
-    src="{{ '/assets/images/Transport%20Chamber.png' | relative_url }}"
-    alt="Transport Chamber — Mars City Colony"
-    style="width:100%; border-radius:8px; display:block;"
-  />
+    <!-- Static Image: Transport Chamber -->
+    <img
+      src="{{ '/assets/images/Transport%20Chamber.png' | relative_url }}"
+      alt="Transport Chamber — Mars City Colony"
+      style="width:100%; border-radius:8px; display:block;"
+    />
 
-</aside>
+  </aside>
 </section>
 
 <section class="section">
@@ -148,7 +169,7 @@ description: Official site for Red Foundations by P.J. Cereste, Book 1 of an ong
 <!-- COUNTDOWN SCRIPT -->
 <script>
   (function() {
-    var launch = new Date('2026-05-12T00:00:00');
+    var launch = new Date('2026-07-28T00:00:00');
     function update() {
       var now = new Date();
       var diff = launch - now;

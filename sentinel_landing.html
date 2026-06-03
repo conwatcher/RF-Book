@@ -386,8 +386,19 @@ body::after {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color 0.25s;
-  animation: fade-in 1s ease both 1.1s;
+  transition: color 0.25s, box-shadow 0.25s;
+  animation: fade-in 1s ease both 1.1s, btn-pulse 2.8s ease-in-out infinite 2s;
+}
+
+@keyframes btn-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(192,57,43,0.3),
+                0 0 20px rgba(192,57,43,0.1);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(192,57,43,0.7),
+                0 0 40px rgba(192,57,43,0.3);
+  }
 }
 
 .access-btn::before {

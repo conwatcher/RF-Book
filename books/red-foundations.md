@@ -202,6 +202,11 @@ description: Red Foundations by P.J. Cereste — Book One of the Red Foundations
     <hr />
 
     <h2 style="color:#ffffff; font-size:1.1rem; margin-bottom:1rem;">What Readers Are Saying</h2>
+<div class="review-pullquote">
+  <div class="review-stars">★★★★★</div>
+  <blockquote>"PJ Cereste treats the planet less like an adventure setting and more like a brutal engineering problem, where survival depends on infrastructure, logistics, and the fragile systems holding human life together. That grounded approach gives the story a weight that feels convincing from the very beginning."</blockquote>
+  <p class="review-attribution">— Elena J. &nbsp;|&nbsp; <span>★★★★★ Goodreads &bull; 299 Reviews</span></p>
+</div>
 
     <div class="review-pullquote">
       <div class="review-stars">★★★★★</div>

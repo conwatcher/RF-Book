@@ -156,7 +156,7 @@ description: The Red Meridian by P.J. Cereste — Book Two of the Red Foundation
 
     <div class="founding-record">
       <p class="record-label">Historical Record</p>
-      <p>The Republic of Proventia was founded on Ironsol 14, October 14, 2074. Eleven colonies signed. Three did not. The man who presided went home without ceremony and said nothing to anyone who didn't need to know. That is who he was. That is who he remains.</p>
+      <p>The convention on New Providence would be remembered as the moment fourteen colonies decided what they were willing to become — and what they were willing to lose to get there. What was signed in that hall, who signed it, and who walked away, is a matter the record keeps. The man who presided went home without ceremony and said nothing to anyone who didn't need to know. That is who he was. That is who he remains.</p>
     </div>
 
     <hr />

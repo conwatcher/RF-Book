@@ -91,6 +91,19 @@ description: The Red Foundations Universe — a hard science-fiction series by P
     margin-bottom: 0.4rem;
   }
 
+  .book-card-body .new-tag {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    background: #cc0000;
+    color: #ffffff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    vertical-align: baseline;
+  }
+
   .book-card-body h2 {
     font-size: 1.3rem;
     color: #ffffff;
@@ -158,7 +171,7 @@ description: The Red Foundations Universe — a hard science-fiction series by P
   </a>
 </div>
         <div class="book-card-body">
-          <p class="book-number">Book Two</p>
+          <p class="book-number">Book Two<span class="new-tag">New</span></p>
           <h2>The Red Meridian</h2>
           <p>Cal Calloway reads rock for a living. He knows what holds and what doesn't, what bears weight and what will eventually fail. He's never spoken to a room larger than a shift crew. Then he says one sentence at a rally, and nothing stays the same.</p>
           <a href="/books/the-red-meridian/" class="btn">Learn More</a>

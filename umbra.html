@@ -1,0 +1,563 @@
+---
+layout: default
+title: The UMBRA Briefing — Colony Archive
+body_class: page-umbra
+permalink: /umbra/
+description: A partial release from the Colony Archive. Document package NSC-SAP-2042-0091-K1 has cleared declassification review — request transmission access to receive the UMBRA briefing.
+---
+
+<style>
+  /* ─────────────────────────────────────────────────────────────────────────
+     UMBRA landing page — dossier styling.
+     Deliberately distinct from the main site's clean sci-fi branding:
+     warm near-black stock, monospace throughout, stamped classification bars.
+     All styles are scoped to .page-umbra so nothing leaks to other pages.
+     ───────────────────────────────────────────────────────────────────────── */
+
+  body.page-umbra{
+    background:
+      radial-gradient(1100px 700px at 50% -10%, rgba(120,90,60,.10), transparent 60%),
+      radial-gradient(900px 600px at 50% 110%, rgba(180,30,30,.08), transparent 60%),
+      #0A0908;
+  }
+
+  .page-umbra .main{ max-width: 900px; }
+
+  .umbra-doc{
+    position:relative;
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px),
+      linear-gradient(170deg, #16130F 0%, #100E0C 45%, #0C0A09 100%);
+    border:1px solid rgba(190,160,120,.20);
+    border-radius:2px;
+    box-shadow:
+      0 24px 70px rgba(0,0,0,.75),
+      inset 0 0 120px rgba(0,0,0,.55);
+    padding: 0 0 2.5rem;
+    overflow:hidden;
+  }
+
+  /* Paper grain — self-contained, no external asset */
+  .umbra-doc::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+    opacity:.05;
+    pointer-events:none;
+    mix-blend-mode:overlay;
+  }
+  .umbra-doc > *{ position:relative; }
+
+  /* ── Classification bars ─────────────────────────────────────────────── */
+  .umbra-class{
+    font-family:var(--mono);
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    text-align:center;
+    color:#E8564A;
+    padding:.7rem 1rem;
+    background:rgba(140,20,20,.14);
+    border-top:2px solid rgba(200,50,40,.55);
+    border-bottom:2px solid rgba(200,50,40,.55);
+  }
+  .umbra-class--top{ border-top:none; }
+  .umbra-class--bottom{ border-bottom:none; margin-top:2.5rem; }
+
+  .umbra-inner{ padding: 2.2rem 2.4rem 0; }
+
+  /* ── Document control header ─────────────────────────────────────────── */
+  .umbra-agency{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#9A8B74;
+    text-align:center;
+    line-height:1.9;
+    margin-bottom:1.6rem;
+  }
+  .umbra-agency strong{ display:block; color:#C9B896; font-weight:700; }
+
+  .umbra-control{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap:.35rem 2rem;
+    padding:1rem 1.2rem;
+    margin-bottom:2.2rem;
+    border:1px solid rgba(190,160,120,.18);
+    background:rgba(0,0,0,.30);
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.06em;
+    color:#8E8069;
+  }
+  .umbra-control span{ color:#CFC3A9; }
+
+  /* ── Headline ────────────────────────────────────────────────────────── */
+  .umbra-title{
+    font-family:var(--mono);
+    font-size:2.5rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#F2E9D8;
+    text-align:center;
+    margin:0 0 .8rem;
+    text-shadow:0 2px 24px rgba(0,0,0,.9);
+  }
+  .umbra-sub{
+    font-family:var(--mono);
+    font-size:.86rem;
+    line-height:1.9;
+    letter-spacing:.04em;
+    color:#A79A82;
+    text-align:center;
+    max-width:620px;
+    margin:0 auto 1.4rem;
+  }
+
+  .umbra-stamp{
+    display:block;
+    width:max-content;
+    margin:0 auto 2.4rem;
+    padding:.5rem 1.4rem;
+    border:2px solid rgba(200,60,50,.60);
+    border-radius:3px;
+    transform:rotate(-2.5deg);
+    font-family:var(--mono);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:#D9483C;
+    opacity:.88;
+  }
+
+  .umbra-rule{
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(190,160,120,.35), transparent);
+    margin:2.4rem 0;
+  }
+
+  .umbra-body p{
+    font-family:var(--mono);
+    font-size:.86rem;
+    line-height:2;
+    letter-spacing:.02em;
+    color:#B4A88F;
+  }
+  .umbra-body p strong{ color:#E4D9C2; }
+
+  .umbra-h2{
+    font-family:var(--mono);
+    font-size:.76rem;
+    font-weight:700;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:#D9483C;
+    margin:0 0 1.2rem;
+  }
+
+  /* ── Attachment cards ────────────────────────────────────────────────── */
+  .umbra-attachments{ display:grid; gap:1rem; margin-bottom:1rem; }
+  .umbra-att{
+    border-left:3px solid rgba(200,60,50,.55);
+    background:rgba(0,0,0,.28);
+    padding:1.1rem 1.3rem;
+  }
+  .umbra-att__label{
+    font-family:var(--mono);
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#C9552F;
+    margin-bottom:.5rem;
+  }
+  .umbra-att__title{
+    font-family:var(--mono);
+    font-size:.92rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#EDE2CC;
+    margin:0 0 .6rem;
+  }
+  .umbra-att p{
+    font-family:var(--mono);
+    font-size:.8rem;
+    line-height:1.95;
+    color:#A6997F;
+    margin:0;
+  }
+  .umbra-att__meta{
+    display:block;
+    margin-top:.7rem;
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#6F6555;
+  }
+
+  /* ── Redaction ───────────────────────────────────────────────────────── */
+  /* Scoped under .umbra-doc so it outranks .umbra-control span et al.,
+     otherwise "redacted" text stays legible inside those blocks. */
+  .umbra-doc .redacted{
+    display:inline-block;
+    background:#000;
+    color:transparent;
+    border-radius:1px;
+    padding:0 .25em;
+    user-select:none;
+    box-shadow:inset 0 0 0 1px rgba(190,160,120,.22);
+  }
+
+  .umbra-withheld{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .umbra-withheld li{
+    font-family:var(--mono);
+    font-size:.8rem;
+    line-height:1.9;
+    letter-spacing:.03em;
+    color:#A6997F;
+    padding:.55rem 0 .55rem 1.5rem;
+    border-bottom:1px dashed rgba(190,160,120,.14);
+    position:relative;
+  }
+  .umbra-withheld li::before{
+    content:"—";
+    position:absolute; left:0;
+    color:#C9552F;
+  }
+  .umbra-withheld li:last-child{ border-bottom:none; }
+
+  /* ── Access request form ─────────────────────────────────────────────── */
+  .umbra-form-wrap{
+    border:1px solid rgba(200,60,50,.34);
+    background:
+      linear-gradient(180deg, rgba(140,20,20,.10), rgba(0,0,0,.34));
+    padding:1.8rem 1.6rem;
+    margin-top:1rem;
+  }
+  .umbra-form-wrap .umbra-h2{ text-align:center; }
+  .umbra-form-intro{
+    font-family:var(--mono);
+    font-size:.8rem;
+    line-height:1.95;
+    color:#B4A88F;
+    text-align:center;
+    max-width:520px;
+    margin:0 auto 1.6rem;
+  }
+
+  .page-umbra .ml-form-embedContent{ display:none; }
+
+  .page-umbra .ml-form-fieldRow{ margin-bottom:.9rem; }
+
+  .page-umbra .ml-block-form input.form-control{
+    width:100%;
+    padding:.85rem 1rem;
+    background:rgba(0,0,0,.55) !important;
+    border:1px solid rgba(190,160,120,.30) !important;
+    border-radius:2px;
+    color:#EDE2CC !important;
+    font-family:var(--mono);
+    font-size:.85rem;
+    letter-spacing:.06em;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .page-umbra .ml-block-form input.form-control::placeholder{
+    color:#6F6555;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.74rem;
+  }
+  .page-umbra .ml-block-form input.form-control:focus{
+    outline:none;
+    border-color:rgba(200,60,50,.75) !important;
+    box-shadow:0 0 0 3px rgba(200,60,50,.14);
+  }
+
+  .page-umbra .ml-form-embedSubmit{ margin-top:1.2rem; }
+  .page-umbra .ml-form-embedSubmit button.primary{
+    width:100%;
+    padding:.95rem 1rem;
+    background:#B32E22 !important;
+    border:1px solid rgba(230,90,75,.55);
+    border-radius:2px;
+    color:#fff !important;
+    font-family:var(--mono);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background .15s ease, transform .08s ease;
+  }
+  .page-umbra .ml-form-embedSubmit button.primary:hover{
+    background:#C93A2C !important;
+    transform:translateY(-1px);
+  }
+
+  .page-umbra .ml-form-successBody{
+    text-align:center;
+    font-family:var(--mono);
+    color:#B4A88F;
+  }
+  .page-umbra .ml-form-successBody h4{
+    font-size:.9rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#D9483C;
+    margin:0 0 .8rem;
+  }
+  .page-umbra .ml-form-successBody p{
+    font-size:.82rem;
+    line-height:1.95;
+    margin:0;
+  }
+
+  .umbra-privacy{
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.08em;
+    color:#6F6555;
+    text-align:center;
+    margin:1.2rem 0 0;
+  }
+
+  /* ── Footer / return paths ───────────────────────────────────────────── */
+  .umbra-return{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.9rem;
+    justify-content:center;
+    margin-top:1.6rem;
+  }
+  .umbra-return a{
+    font-family:var(--mono);
+    font-size:.74rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#C9B896;
+    padding:.6rem 1.2rem;
+    border:1px solid rgba(190,160,120,.28);
+    border-radius:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .umbra-return a:hover{
+    border-color:rgba(200,60,50,.60);
+    color:#F2E9D8;
+  }
+
+  .umbra-endnote{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    text-align:center;
+    color:#6F6555;
+    margin-top:1.8rem;
+  }
+
+  @media (max-width: 680px){
+    .umbra-inner{ padding:1.6rem 1.2rem 0; }
+    .umbra-title{ font-size:1.6rem; letter-spacing:.10em; }
+    .umbra-class{ font-size:.6rem; letter-spacing:.2em; }
+    .umbra-stamp{ font-size:.68rem; letter-spacing:.16em; }
+  }
+</style>
+
+<div class="umbra-doc">
+
+  <div class="umbra-class umbra-class--top">Top Secret // UMBRA // NOFORN</div>
+
+  <div class="umbra-inner">
+
+    <p class="umbra-agency">
+      <strong>Office of the Director of National Intelligence</strong>
+      Colony Archive Program &bull; Special Access
+    </p>
+
+    <div class="umbra-control">
+      <div>Document Control No. <span>NSC-SAP-2042-0091-K1</span></div>
+      <div>Object Designation <span>C/2042 K1-A</span></div>
+      <div>Originating Agency <span>JPL / ODNI Interagency</span></div>
+      <div>Prepared By <span class="redacted">&nbsp;identity withheld&nbsp;</span></div>
+      <div>Review Status <span>Cleared for limited release</span></div>
+      <div>Distribution <span>Rolling — ongoing authorization</span></div>
+    </div>
+
+    <h1 class="umbra-title">The UMBRA Briefing</h1>
+
+    <p class="umbra-sub">
+      Anomalous Event Report — trajectory deviation, Mars impact, and unknown facilitator.
+      Three source documents, released as filed.
+    </p>
+
+    <div class="umbra-stamp">Declassified — Partial Release</div>
+
+    <div class="umbra-body">
+      <p>
+        In November 2042 a comet on a routine, fully modeled trajectory changed course. Not
+        dramatically. Just enough to be impossible. Seventy-one hours later it struck Mars, and
+        the planet began doing something no model predicted.
+      </p>
+      <p>
+        What follows was assembled in the days after by people who had no framework for any of it.
+        <strong>This package contains the primary documents — the tracking log, the subject file, and
+        the partial transcript.</strong> No summary. No interpretation. No one at the time had one to
+        offer, and the record reads better without.
+      </p>
+    </div>
+
+    <div class="umbra-rule"></div>
+
+    <h2 class="umbra-h2">Contents of This Release</h2>
+
+    <div class="umbra-attachments">
+
+      <div class="umbra-att">
+        <div class="umbra-att__label">Attachment A</div>
+        <h3 class="umbra-att__title">Near-Earth Object Tracking Log</h3>
+        <p>
+          Twenty-two minutes of automated observatory output, from <em>trajectory classification:
+          routine</em> to <em>probability of impact: 100%</em>. The reporting astronomer ran it four
+          times before waking anyone. Her handwritten marginal note is reproduced in full; so is the
+          typed supplemental added thirty-eight minutes later, which ends with a sentence no
+          instrument log should contain.
+        </p>
+        <span class="umbra-att__meta">Mauna Kea Observatory &bull; 02:09–02:31 UT</span>
+      </div>
+
+      <div class="umbra-att">
+        <div class="umbra-att__label">Attachment B</div>
+        <h3 class="umbra-att__title">Subject Identification File</h3>
+        <p>
+          Opened 17 November 2042. Status: <em>incomplete — active investigation</em>. Every agency
+          cross-reference returns the same result, and the case officer's annotations are the most
+          honest lines in the package: three attempted classifications, three system errors, and the
+          observation that the problem may not be the subject but the categories. Known capabilities
+          are recorded as observed. Nothing beyond that is recorded, because nothing beyond that
+          was known.
+        </p>
+        <span class="umbra-att__meta">ODNI-SAP-2042-Subject-<span class="redacted">&nbsp;withheld&nbsp;</span></span>
+      </div>
+
+      <div class="umbra-att">
+        <div class="umbra-att__label">Attachment C</div>
+        <h3 class="umbra-att__title">Partial Transcript — NSC Emergency Session</h3>
+        <p>
+          Situation Room, Level B. The exchange runs long enough to establish what Mars had become,
+          what was being asked of the United States, and what was being offered in return — and then
+          there is a seven-minute gap where the audio record is corrupted and the visual record is
+          sealed under separate classification. The transcript resumes. It does not explain the gap.
+          It ends before the last question is answered.
+        </p>
+        <span class="umbra-att__meta">Date <span class="redacted">&nbsp;redacted&nbsp;</span> &bull; Transcript status: partial</span>
+      </div>
+
+    </div>
+
+    <div class="umbra-rule"></div>
+
+    <h2 class="umbra-h2">Not Included in This Release</h2>
+
+    <ul class="umbra-withheld">
+      <li>The seven minutes missing from Attachment C. Visual record sealed under separate classification.</li>
+      <li>The remainder of the transcript. Classification level: beyond UMBRA. Requires direct presidential authorization.</li>
+      <li>Any verified photograph of the subject in Attachment B. None exists.</li>
+      <li>The identity of the officer who prepared this package, and the identity of the case officer whose remarks appear in Attachment B.</li>
+    </ul>
+
+    <div class="umbra-rule"></div>
+
+    <!-- ── Access request — Colonist Application (Wave 3), same MailerLite form as /newsletter/ ── -->
+    <div class="umbra-form-wrap">
+      <h2 class="umbra-h2">Request Archive Access</h2>
+      <p class="umbra-form-intro">
+        The UMBRA briefing is transmitted to cleared recipients on request. Access is voluntary.
+        Further transmissions from the Colony Archive follow at irregular intervals, consistent with
+        declassification review timelines.
+      </p>
+
+      <div id="mlb2-38657132" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38657132">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent">
+                <h4>COLONIST APPLICATION — WAVE 3</h4>
+                <p><strong>Complete your application to receive the free Mars Colony Handbook and begin receiving transmissions from inside the colony.</strong></p>
+              </div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2162590/forms/182295661840959086/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-name ml-validate-required">
+                      <input aria-label="name" aria-required="true" type="text" class="form-control" name="fields[name]" placeholder="Name" autocomplete="given-name">
+                    </div>
+                  </div>
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Request Access</button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <h4>Transmission Received</h4>
+                <p>Your request is being processed by SENTINEL. The UMBRA briefing will arrive shortly. Identify yourself as a cleared recipient — your application has been logged.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="umbra-privacy">No cost. Unsubscribe at any time. See our <a href="{{ '/privacy/' | relative_url }}" style="color:#C9B896;">privacy policy</a>.</p>
+    </div>
+
+    <div class="umbra-rule"></div>
+
+    <div class="umbra-body">
+      <p>
+        The complete record of the events summarized in this package — Years 0 through 10 of the
+        Mars colonization period — is documented in full in <strong>Red Foundations</strong> by
+        P.J. Cereste. The convention that followed is documented in <strong>The Red Meridian</strong>,
+        Book Two. Both are available now.
+      </p>
+    </div>
+
+    <div class="umbra-return">
+      <a href="{{ '/book/' | relative_url }}">The Series</a>
+      <a href="{{ '/books/red-foundations/' | relative_url }}">Book One</a>
+      <a href="{{ '/books/the-red-meridian/' | relative_url }}">Book Two</a>
+      <a href="{{ '/' | relative_url }}">Main Site</a>
+    </div>
+
+    <p class="umbra-endnote">Colony Archive — Authorized Distribution Only — UMBRA</p>
+
+  </div>
+
+  <div class="umbra-class umbra-class--bottom">Top Secret // UMBRA // NOFORN</div>
+
+</div>
+
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+<script>
+  function ml_webform_success_38657132() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-38657132 .row-success').show();
+    $('.ml-subscribe-form-38657132 .row-form').hide();
+  }
+</script>

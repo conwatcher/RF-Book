@@ -5,6 +5,116 @@ body_class: home
 description: Official site for the Red Foundations Universe by P.J. Cereste — a hard science-fiction series about terraforming, survival, sovereignty, and the first generation of Mars City.
 ---
 
+<style>
+  /* "New Release" badge — used in the order banner and on the Book Two cover */
+  .new-badge{
+    display:inline-block;
+    padding:.15rem .5rem;
+    margin-right:.4rem;
+    border-radius:3px;
+    background:var(--red2);
+    color:#fff;
+    font-family:var(--mono);
+    font-size:.62rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    vertical-align:middle;
+    box-shadow:0 0 0 0 rgba(255,59,59,.55);
+    animation: badge-pulse 2.6s ease-out infinite;
+  }
+  @keyframes badge-pulse{
+    0%   {box-shadow:0 0 0 0 rgba(255,59,59,.50)}
+    70%  {box-shadow:0 0 0 10px rgba(255,59,59,0)}
+    100% {box-shadow:0 0 0 0 rgba(255,59,59,0)}
+  }
+
+  /* Two-book lockup in the hero — both covers carry equal weight */
+  .hero-covers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    padding:14px;
+  }
+  .hero-cover{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:inherit;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:rgba(0,0,0,.35);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .hero-cover:hover{
+    transform:translateY(-3px);
+    border-color:rgba(225,29,46,.55);
+    box-shadow:0 14px 30px rgba(0,0,0,.55);
+  }
+  /* Fixed 2:3 frame so both cards match exactly; covers are matted, never
+     cropped — the two books have different native aspect ratios. */
+  .hero-cover__frame{
+    aspect-ratio: 2 / 3;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .hero-cover__frame img{
+    display:block;
+    width:auto;
+    height:100%;
+    max-width:100%;
+    object-fit:contain;
+  }
+  .hero-cover__label{
+    display:block;
+    margin-top:auto;
+    padding:9px 11px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .hero-cover__label strong{
+    display:block;
+    margin-top:3px;
+    font-size:.82rem;
+    letter-spacing:.04em;
+    text-transform:none;
+    color:var(--text);
+  }
+  .hero-cover .new-badge{
+    position:absolute;
+    top:9px; left:9px;
+    margin:0;
+    z-index:2;
+  }
+  .hero-covers__cta{
+    display:block;
+    padding:0 14px 14px;
+    font-family:var(--mono);
+    font-size:.78rem;
+    letter-spacing:.06em;
+    color:var(--muted);
+  }
+
+  /* Gentle lift on the theme cards to match the covers */
+  .card{transition: transform .18s ease, border-color .18s ease}
+  .card:hover{transform:translateY(-2px); border-color:rgba(225,29,46,.35)}
+
+  @media (prefers-reduced-motion: reduce){
+    .new-badge{animation:none}
+    .hero-cover, .card{transition:none}
+    .hero-cover:hover, .card:hover{transform:none}
+  }
+</style>
+
 <!-- ORDER BANNER -->
 <div style="background: linear-gradient(90deg, #1a0000, #3a0000, #1a0000); border-top: 1px solid var(--red2); border-bottom: 1px solid var(--red2); padding: 0.85rem 1rem;">
   <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; text-align: center;">
@@ -26,14 +136,15 @@ description: Official site for the Red Foundations Universe by P.J. Cereste — 
 
     <div>
       <p style="margin: 0 0 0.4rem; font-size: 0.9rem; letter-spacing: 0.04em;">
+        <span class="new-badge">New Release</span>
         <strong style="color: var(--red2);">THE RED MERIDIAN</strong>
-        <span style="color: #ccc;"> — Book Two — Pre-Order Now</span>
+        <span style="color: #ccc;"> — Book Two — Available Now</span>
       </p>
       <a href="https://a.co/d/0in4Aua5"
          target="_blank"
          rel="noopener"
-         style="display: inline-block; padding: 0.4rem 1.2rem; background: transparent; color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px; border: 1px solid rgba(255,255,255,0.4);">
-        Pre-Order on Amazon
+         style="display: inline-block; padding: 0.4rem 1.2rem; background: var(--red2); color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 3px;">
+        Buy Now on Amazon
       </a>
     </div>
 
@@ -47,13 +158,12 @@ description: Official site for the Red Foundations Universe by P.J. Cereste — 
     <p>
       <strong>Red Foundations</strong> is Book One of the Red Foundations Universe — a hard science-fiction series set in a future where an alien impact triggers rapid terraforming on Mars.
       The first decade of colonization becomes a test of survival, governance, and what independence really means.
-      <strong>Book Two, The Red Meridian, arrives July 28, 2026.</strong>
+      <strong>Book Two, The Red Meridian, is available now.</strong>
     </p>
 
     <div class="hero__actions">
       <a class="button button--glow" href="{{ '/book/' | relative_url }}">Explore the Series</a>
       <a class="button" href="{{ site.newsletter_url }}" target="_blank" rel="noopener">Get the Free Handbook</a>
-      <a class="button button--ghost" href="{{ '/archive/' | relative_url }}">Colony Archives</a>
     </div>
     <div class="hr"></div>
 <div class="hr"></div>
@@ -102,12 +212,6 @@ description: Official site for the Red Foundations Universe by P.J. Cereste — 
     </div>
     <div class="hr"></div>
 
-    <div id="release-countdown" class="banner" style="text-align:center; margin-bottom:0" aria-live="polite">
-      <p class="micro" style="margin:0">Days until <strong>The Red Meridian</strong> launches: <span id="countdown-days" style="font-weight:700; color:var(--red2)">…</span></p>
-    </div>
-
-    <div class="hr"></div>
-
     <div class="grid">
       <div class="card">
         <div class="tag">Theme</div>
@@ -128,6 +232,24 @@ description: Official site for the Red Foundations Universe by P.J. Cereste — 
   </div>
 
   <aside class="cover">
+
+    <!-- TWO-BOOK LOCKUP: both covers carry equal weight -->
+    <div class="hero-covers">
+      <a class="hero-cover" href="{{ '/books/red-foundations/' | relative_url }}">
+        <span class="hero-cover__frame">
+          <img src="{{ '/assets/images/Book1_cover.PNG' | relative_url }}" alt="Red Foundations — Book One cover" />
+        </span>
+        <span class="hero-cover__label">Book One<strong>Red Foundations</strong></span>
+      </a>
+      <a class="hero-cover" href="{{ '/books/the-red-meridian/' | relative_url }}">
+        <span class="new-badge">New</span>
+        <span class="hero-cover__frame">
+          <img src="{{ '/assets/images/Book2_Cover.PNG' | relative_url }}" alt="The Red Meridian — Book Two cover" />
+        </span>
+        <span class="hero-cover__label">Book Two<strong>The Red Meridian</strong></span>
+      </a>
+    </div>
+    <div class="hero-covers__cta">Both books available now — tap a cover to read more.</div>
 
     <!-- Video 1: Corrected Book Trailer -->
     <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
@@ -180,24 +302,3 @@ description: Official site for the Red Foundations Universe by P.J. Cereste — 
     </div>
   </div>
 </section>
-
-<!-- COUNTDOWN SCRIPT -->
-<script>
-  (function() {
-    var launch = new Date('2026-07-28T00:00:00');
-    function update() {
-      var now = new Date();
-      var diff = launch - now;
-      var el = document.getElementById('countdown-days');
-      if (!el) return;
-      if (diff <= 0) {
-        el.textContent = 'OUT NOW';
-        return;
-      }
-      var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-      el.textContent = days;
-    }
-    update();
-    setInterval(update, 60000);
-  })();
-</script>

@@ -136,9 +136,9 @@ description: The Red Meridian by P.J. Cereste — Book Two of the Red Foundation
 
         <p>Now he's at the center of a constitutional convention assembling fourteen colonial settlements into something that has never existed before.</p>
 
-        <p><strong>Available for Pre-Order now!</strong></p>
+        <p><strong>Available now in ebook and print.</strong></p>
 
-       <a href="https://a.co/d/0in4Aua5" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Pre-Order on Amazon</a>
+       <a href="https://a.co/d/0in4Aua5" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
 <a href="/books/red-foundations/" style="display:inline-block; padding:0.65rem 1.4rem; background:transparent; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em; border:1px solid rgba(255,255,255,0.3);">Read Book One First</a>
       </div>
 

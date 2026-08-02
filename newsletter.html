@@ -49,10 +49,12 @@ description: Join the Red Foundations newsletter and receive the free Mars Colon
 </div>
 
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+<script src="{{ '/assets/js/mailerlite-ga4.js' | relative_url }}"></script>
 <script>
   function ml_webform_success_38657132() {
     var $ = ml_jQuery || jQuery;
     $('.ml-subscribe-form-38657132 .row-success').show();
     $('.ml-subscribe-form-38657132 .row-form').hide();
+    if (window.rfFormSubmission) window.rfFormSubmission();
   }
 </script>

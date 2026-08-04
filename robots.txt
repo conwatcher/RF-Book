@@ -1,0 +1,11 @@
+# Red Foundations — search crawler directives
+
+User-agent: *
+
+# Keep the free reader handbook (newsletter lead magnet) out of
+# search results so readers can't grab it without signing up.
+Disallow: /assets/downloads/
+Disallow: /assets/mars-colony-handbook-red-foundations.pdf
+
+# Point crawlers to the auto-generated sitemap.
+Sitemap: https://www.redfoundationsbook.com/sitemap.xml

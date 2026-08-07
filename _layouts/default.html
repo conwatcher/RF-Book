@@ -13,6 +13,22 @@ gtag('config', 'G-JY49FBEKLP');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+
+  <!-- Open Graph / Facebook -->
+  {% assign og_title = page.title | default: site.title %}
+  {% assign og_description = page.description | default: "A hard science fiction series set on a terraformed Mars. The Red Foundations Universe by P.J. Cereste." %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:description" content="{{ og_description }}">
+  <meta property="og:image" content="{{ site.url }}{{ '/assets/images/WebOG.png' | relative_url }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | relative_url }}">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ og_description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ '/assets/images/WebOG.png' | relative_url }}">
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
   <!-- MailerLite Universal -->

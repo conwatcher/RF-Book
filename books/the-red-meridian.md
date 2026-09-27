@@ -123,7 +123,7 @@ description: The Red Meridian by P.J. Cereste — Book Two of the Red Foundation
     <div class="book-hero">
 
       <div class="book-cover-col">
-        <img src="/assets/images/Book2_Cover.PNG" alt="The Red Meridian book cover" />
+        <img src="/assets/images/Book2_Cover.webp" alt="The Red Meridian book cover" />
       </div>
 
       <div class="book-info-col">

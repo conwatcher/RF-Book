@@ -152,7 +152,7 @@ description: The Red Foundations Universe — a hard science-fiction series by P
       <div class="book-card">
        <div class="book-card-cover">
   <a href="/books/red-foundations/">
-    <img src="/assets/images/Book1_cover.PNG" alt="Red Foundations book cover" />
+    <img src="/assets/images/Book1_cover.webp" alt="Red Foundations book cover" />
   </a>
 </div>
 <div class="book-card-body">
@@ -167,7 +167,7 @@ description: The Red Foundations Universe — a hard science-fiction series by P
       <div class="book-card">
        <div class="book-card-cover">
   <a href="/books/the-red-meridian/">
-    <img src="/assets/images/Book2_Cover.PNG" alt="The Red Meridian book cover" />
+    <img src="/assets/images/Book2_Cover.webp" alt="The Red Meridian book cover" />
   </a>
 </div>
         <div class="book-card-body">

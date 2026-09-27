@@ -157,7 +157,7 @@ description: Red Foundations by P.J. Cereste — Book One of the Red Foundations
     <div class="book-hero">
 
       <div class="book-cover-col">
-        <img src="/assets/images/Book1_cover.PNG" alt="Red Foundations book cover" />
+        <img src="/assets/images/Book1_cover.webp" alt="Red Foundations book cover" />
       </div>
 
       <div class="book-info-col">

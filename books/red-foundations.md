@@ -172,7 +172,11 @@ description: Red Foundations by P.J. Cereste — Book One of the Red Foundations
 
         <p><strong>Available in ebook and print.</strong></p>
 
-        <a href="https://a.co/d/0bINYe4x" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.25rem;">
+          <a href="https://a.co/d/0bINYe4x" data-buy-book="red-foundations" data-buy-retailer="amazon" data-buy-placement="book-page" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
+          <a href="https://books2read.com/u/mK1YQd" data-buy-book="red-foundations" data-buy-retailer="books2read" data-buy-placement="book-page" style="display:inline-block; padding:0.65rem 1.4rem; background:transparent; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em; border:1px solid rgba(255,255,255,0.3);">Other Stores &amp; Libraries</a>
+        </div>
+        <p style="margin:0.6rem 0 0; font-size:0.8rem; color:#bbb;">Ebook also at Apple Books, Kobo, and other retailers and libraries.</p>
       </div>
 
     </div>
@@ -185,7 +189,7 @@ description: Red Foundations by P.J. Cereste — Book One of the Red Foundations
 
     <p><em>Red Foundations</em> covers the first decade of Mars colonization — Years 0 through 10 — and the extraordinary, grinding, politically treacherous work of building a civilization from the ground up on a world that should not, by any right, exist in the state it does. The colonists who arrive are not explorers or adventurers. They are engineers, physicians, electricians, farmers, and administrators who signed on to build something that lasts. They are selected for competence and resilience, not prestige. And they arrive to find that someone — or something — has already laid the groundwork for what they are about to build.</p>
 
-    <p>James Reeves runs the logistics of survival from Mars City Control, holding the colony together through supply chain crises, infrastructure failures, and the slow accumulation of Earth's bureaucratic interference. Dr. Adaeze Okonkwo manages the political survival of the colony — a physicist turned colony leader who understands that independence is not declared, it is constructed, carefully, under conditions that can support it. Marcus Webb commands the Mars Space Force contingent, navigating the tension between his orders from Earth and his growing loyalty to the people he protects. And Jack Masters, who built the space elevator — four of them, simultaneously, across two planets — watches all of it with an intensity that no one quite knows how to read.</p>
+    <p>James Reeves runs the logistics of survival from Mars City Control, holding the colony together through supply chain crises, infrastructure failures, and the slow accumulation of Earth's bureaucratic interference. Dr. Amara Okonkwo manages the political survival of the colony — a physicist turned colony leader who understands that independence is not declared, it is constructed, carefully, under conditions that can support it. Marcus Webb commands the Mars Space Force contingent, navigating the tension between his orders from Earth and his growing loyalty to the people he protects. And Jack Masters, who built the space elevator — four of them, simultaneously, across two planets — watches all of it with an intensity that no one quite knows how to read.</p>
 
     <p>The colony is dependent on Earth. This is not a weakness the novel papers over — it is the central, structuring reality of everything that happens. Every supply ship matters. Every political negotiation with Earth carries existential stakes. The Mars Autonomy Accord, when it arrives at Year 10, is not a victory. It is a strategic delay, a calculated ten-year truce purchased at the price of acknowledging what the colony is not yet strong enough to survive without. The Independents call it surrender. Dr. Okonkwo calls it the only path to independence that will not destroy everything the colonists have built.</p>
 

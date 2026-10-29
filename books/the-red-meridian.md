@@ -138,8 +138,12 @@ description: The Red Meridian by P.J. Cereste — Book Two of the Red Foundation
 
         <p><strong>Available now in ebook and print.</strong></p>
 
-       <a href="https://a.co/d/0in4Aua5" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
-<a href="/books/red-foundations/" style="display:inline-block; padding:0.65rem 1.4rem; background:transparent; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em; border:1px solid rgba(255,255,255,0.3);">Read Book One First</a>
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:0.25rem;">
+          <a href="https://a.co/d/0in4Aua5" data-buy-book="the-red-meridian" data-buy-retailer="amazon" data-buy-placement="book-page" style="display:inline-block; padding:0.65rem 1.4rem; background:#cc0000; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em;">Buy Now on Amazon</a>
+          <a href="https://books2read.com/u/bOBZM9" data-buy-book="the-red-meridian" data-buy-retailer="books2read" data-buy-placement="book-page" style="display:inline-block; padding:0.65rem 1.4rem; background:transparent; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em; border:1px solid rgba(255,255,255,0.3);">Other Stores &amp; Libraries</a>
+          <a href="/books/red-foundations/" style="display:inline-block; padding:0.65rem 1.4rem; background:transparent; color:#ffffff; text-decoration:none; border-radius:4px; font-size:0.875rem; font-weight:600; letter-spacing:0.04em; border:1px solid rgba(255,255,255,0.3);">Read Book One First</a>
+        </div>
+        <p style="margin:0.6rem 0 0; font-size:0.8rem; color:#bbb;">Ebook also at Apple Books, Kobo, and other retailers and libraries.</p>
       </div>
 
     </div>

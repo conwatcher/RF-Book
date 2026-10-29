@@ -9,6 +9,18 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-JY49FBEKLP');
 </script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-buy-book]');
+  if (!a || typeof gtag !== 'function') return;
+  gtag('event', 'buy_click', {
+    book: a.getAttribute('data-buy-book'),
+    retailer: a.getAttribute('data-buy-retailer'),
+    placement: a.getAttribute('data-buy-placement'),
+    transport_type: 'beacon'
+  });
+});
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
